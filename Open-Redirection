@@ -1,0 +1,68 @@
+Basic Functionality:
+
+A web application might use a parameter in its URL to specify a destination for redirection.
+Example URL:
+
+bash:
+http://example.com/redirect?url=https://trusted-site.com
+Vulnerability:
+
+If the application does not validate the url parameter, an attacker can manipulate it to point to a malicious site:
+
+bash:
+http://example.com/redirect?url=https://malicious-site.com
+Common Examples of Open Redirect
+Simple Redirection:
+
+php
+Copy code
+<?php
+if (isset($_GET['url'])) {
+    $url = $_GET['url'];
+    header("Location: $url");
+    exit();
+}
+?>
+In this example, any URL passed as a query parameter will be redirected to, without validation.
+
+Chained Redirection:
+An attacker might use a trusted site as a middleman:
+
+bash:
+http://example.com/redirect?url=https://trusted-site.com/redirect?url=https://malicious-site.com
+Detection of Open Redirect Vulnerabilities
+
+Manual Testing:
+Modify the url parameter to point to an external domain and check if the application redirects correctly.
+Example:
+
+bash:
+http://example.com/redirect?url=https://malicious-site.com
+
+Automated Tools:
+Use tools like OWASP ZAP or Burp Suite to scan for open redirect vulnerabilities by testing common parameters in web applications.
+Review Source Code:
+
+Check for redirection logic in the codebase to identify any potential flaws.
+Prevention Strategies
+Input Validation:
+
+Implement strict validation on the redirect parameter to ensure it only allows whitelisted URLs.
+php:
+
+$allowed_urls = ['https://trusted-site.com', 'https://another-trusted-site.com'];
+if (in_array($url, $allowed_urls)) {
+    header("Location: $url");
+} else {
+    // Handle invalid URL
+}
+Relative URLs:
+
+Limit redirection to internal pages or use relative URLs instead of full external URLs.
+php:
+
+if (strpos($url, 'http') === false) {
+    header("Location: $url");
+} else {
+    // Handle invalid external URL
+}
