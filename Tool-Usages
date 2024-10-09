@@ -1,0 +1,64 @@
+1. sqlmap 
+sqlmap --wizard
+sqlmap-u "http://the url u want to inject with the id " --batch
+example: sqlmap-u "http://192.168.0.0/room.php?cod=1" –batch
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Sn1per Command Overview
+
+Basic Command Structure
+sniper -t <target> [options]
+Example : sniper -t example.com
+
+Common Commands
+
+Scan a Target
+Description: Performs a basic scan on the specified target.
+sniper -t <target-ip-or-domain>
+
+Full Scan
+Description: Conducts a comprehensive scan using multiple modules.
+sniper -t <target-ip-or-domain> -f
+
+Save Output
+Description: Saves the scan results to a specified directory.
+sniper -t <target-ip-or-domain> -o <output-directory>
+
+Web Application Scan
+Description: Specifically targets web applications for vulnerabilities.
+sniper -t <target-ip-or-domain> --web
+
+Service Version Detection
+Description: Identifies services and their versions running on the target.
+sniper -t <target-ip-or-domain> --services
+
+Nmap Integration
+Description: Runs an Nmap scan as part of the Sn1per process.
+sniper -t <target-ip-or-domain> -n
+
+Custom Configuration File
+Description: Uses a specified configuration file to customize scans.
+sniper -t <target-ip-or-domain> -c <config-file>
+
+Scan for Specific Vulnerabilities
+Description: Focuses on certain known vulnerabilities.
+sniper -t <target-ip-or-domain> --scan-vulns
+
+Update Sn1per
+Description: Updates the Sn1per tool to the latest version.
+sniper --update
+
+View Help and Options
+Description: Displays all available commands and options.
+sniper --help
+
+Example Usage
+Performing a Full Scan on a Target:
+sniper -t example.com -f
+
+Scanning a Specific IP Address with Output:
+sniper -t 192.168.1.10 -o /path/to/output
+
+Running a Web Application Security Scan:
+sniper -t example.com --web
