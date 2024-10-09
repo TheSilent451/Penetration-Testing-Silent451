@@ -1,0 +1,35 @@
+1.Common HTTP Methods:
+
+GET: Retrieve data from the server.
+POST: Send data to the server to create a new resource.
+PUT: Update an existing resource or create it if it doesn’t exist.
+PATCH: Apply partial modifications to a resource.
+DELETE: Remove a resource from the server.
+HEAD: Retrieve headers for a resource without the body.
+OPTIONS: Describe the communication options for a resource.
+TRACE: Echo back the received request for diagnostic purposes.
+CONNECT: Establish a tunnel to the server, typically for HTTPS.
+
+
+2.HTTP methods specifically used in RESTful APIs:
+
+GET: Retrieve data from the server.
+POST: Create a new resource on the server.
+PUT: Update an existing resource or create a new one if it doesn’t exist.
+PATCH: Apply partial modifications to an existing resource.
+DELETE: Remove a resource from the server.
+HEAD: Retrieve headers for a resource without the body.
+OPTIONS: Describe communication options for the target resource.
+TRACE: Echo back the received request for diagnostic purposes.
+CONNECT: Establish a tunnel to the server, typically for HTTPS.
+
+
+3.Common HTTP Methods for Mobile APIs:
+
+GET: Retrieve data from the server (e.g., fetching user profiles).
+POST: Send data to the server to create a new resource (e.g., submitting a form).
+PUT: Update an existing resource or create it if it doesn’t exist (e.g., updating user settings).
+PATCH: Apply partial updates to an existing resource (e.g., changing a single field in a user profile).
+DELETE: Remove a resource from the server (e.g., deleting a user account).
+HEAD: Retrieve headers for a resource without the body (e.g., checking for resource updates).
+OPTIONS: Describe communication options for a resource (e.g., checking supported methods).
