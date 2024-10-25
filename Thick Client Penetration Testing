@@ -1,0 +1,50 @@
+1.strings64.exe
+
+strings64.exe is a utility from the Sysinternals Suite, designed to extract readable strings from binary files. Here are some key points about it:
+
+Purpose
+
+Extract Strings: It identifies and extracts sequences of printable characters from binary files, which can include executables, libraries, and other types of data.
+Data Analysis: Useful in reverse engineering, malware analysis, and debugging, allowing users to see text that may not be directly visible in binary format.
+
+Features
+
+64-bit Version: As indicated by the "64" in its name, it’s optimized for 64-bit systems, making it faster and more efficient when working with larger files.
+Customization: You can set parameters to specify the minimum string length to extract, which helps filter out noise.
+Output Options: It can output the strings to the console or redirect them to a file for further analysis.
+
+Usage
+
+Navigate to the Directory
+Use the cd command to navigate to the folder where strings64.exe is located. For example:
+
+cd C:\Path\To\Sysinternals
+
+Run the Command
+Use the command to extract strings from a binary file. For example:
+
+strings64.exe C:\Path\To\YourFile.exe
+
+Customize Options 
+You can specify parameters like minimum string length. For example, to extract strings longer than 5 characters:
+
+strings64.exe -n 5 C:\Path\To\YourFile.exe
+
+Output to File
+To save the output to a text file, use redirection:
+
+strings64.exe C:\Path\To\YourFile.exe > output.txt
+
+Example Command
+
+strings64.exe -n 5 C:\Path\To\YourFile.exe > output.txt
+This command will extract strings longer than 5 characters from YourFile.exe and save them to output.txt.
+
+Applications
+
+Malware Analysis: Security researchers often use it to identify suspicious strings that might indicate malicious behavior.
+Debugging: Developers can use it to inspect binaries for error messages or other textual data that may assist in debugging.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.
