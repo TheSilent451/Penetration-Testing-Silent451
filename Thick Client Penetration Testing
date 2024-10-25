@@ -4,14 +4,14 @@ strings64.exe is a utility from the Sysinternals Suite, designed to extract read
 
 Purpose
 
-Extract Strings: It identifies and extracts sequences of printable characters from binary files, which can include executables, libraries, and other types of data.
-Data Analysis: Useful in reverse engineering, malware analysis, and debugging, allowing users to see text that may not be directly visible in binary format.
+\\ Extract Strings: It identifies and extracts sequences of printable characters from binary files, which can include executables, libraries, and other types of data.
+\\ Data Analysis: Useful in reverse engineering, malware analysis, and debugging, allowing users to see text that may not be directly visible in binary format.
 
 Features
 
-64-bit Version: As indicated by the "64" in its name, it’s optimized for 64-bit systems, making it faster and more efficient when working with larger files.
-Customization: You can set parameters to specify the minimum string length to extract, which helps filter out noise.
-Output Options: It can output the strings to the console or redirect them to a file for further analysis.
+\\ 64-bit Version: As indicated by the "64" in its name, it’s optimized for 64-bit systems, making it faster and more efficient when working with larger files.
+\\ Customization: You can set parameters to specify the minimum string length to extract, which helps filter out noise.
+\\ Output Options: It can output the strings to the console or redirect them to a file for further analysis.
 
 Usage
 
@@ -42,9 +42,32 @@ This command will extract strings longer than 5 characters from YourFile.exe and
 
 Applications
 
-Malware Analysis: Security researchers often use it to identify suspicious strings that might indicate malicious behavior.
-Debugging: Developers can use it to inspect binaries for error messages or other textual data that may assist in debugging.
+\\ Malware Analysis: Security researchers often use it to identify suspicious strings that might indicate malicious behavior.
+\\ Debugging: Developers can use it to inspect binaries for error messages or other textual data that may assist in debugging.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2.
+2.ILSpy
+
+ILSpy is an open-source .NET assembly browser and decompiler. It's a powerful tool for inspecting and analyzing .NET assemblies, allowing you to view the source code and metadata of compiled .NET applications.
+
+Key Features
+
+\\ Decompilation: ILSpy can decompile .NET assemblies back into C# or IL (Intermediate Language) code, making it easier to understand how the original code works.
+\\ Assembly Inspection: It provides detailed views of assembly metadata, including types, methods, and resources.
+\\ Search Functionality: You can search for specific classes, methods, or strings within assemblies.
+\\ Plugins: ILSpy supports plugins, allowing for extended functionality tailored to specific needs.
+
+Usage
+
+\\ Download and Install: https://sourceforge.net/projects/ilspy.mirror/
+\\ Open an Assembly: Launch ILSpy and drag-and-drop a .NET assembly (DLL or EXE) into the interface.
+\\ Explore: Navigate through the tree structure to view namespaces, classes, methods, and properties.
+\\ Decompile: Click on a method or class to view its decompiled source code.
+\\ Export: You can export decompiled code as a project if needed.
+
+Applications
+
+\\ Reverse Engineering: Useful for understanding third-party libraries or applications when source code is not available.
+\\ Debugging: Helps developers debug and analyze .NET applications.
+\\ Security Analysis: Used in security research to inspect .NET malware or potentially harmful applications.
