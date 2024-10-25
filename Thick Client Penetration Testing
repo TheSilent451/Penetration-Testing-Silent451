@@ -76,7 +76,8 @@ Applications
 
 3. WinHex
 
-WinHex is a powerful hex editor and disk editor designed for data recovery, computer forensics, and low-level data processing. It provides a wide range of features for viewing and editing binary data, making it a favorite among professionals in various fields.
+WinHex is a powerful hex editor and disk editor designed for data recovery, computer forensics, and low-level data processing.
+It provides a wide range of features for viewing and editing binary data, making it a favorite among professionals in various fields.
 
 Key Features
 
@@ -122,3 +123,108 @@ Caution
 \\ Careful Editing: Ensure you understand what you’re editing to avoid corrupting files or drives.
 \\ Licensing
 \\ WinHex offers a free version with limited features, while a professional version requires a paid license for access to advanced capabilities.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Process Hacker
+
+Process Hacker is a powerful and versatile tool for monitoring and managing processes on Windows systems.
+It provides advanced features for system analysis, process management, and debugging, making it popular among developers, system administrators, and security researchers.
+
+Key Features
+
+\\ Process Management: View detailed information about running processes, including CPU and memory usage, handles, threads, and DLLs loaded by each process.
+\\ Process Termination: End processes easily, even those that may be resistant to termination using standard methods.
+\\ System Monitoring: Real-time monitoring of system performance, allowing you to track resource usage over time.
+\\ Memory Inspection: Inspect and modify the memory of processes, which is useful for debugging or reverse engineering.
+\\ Service Management: Manage Windows services, including starting, stopping, and configuring service properties.
+\\ Network Monitoring: View network connections and associated processes, helping identify unwanted or malicious activity.
+\\ Advanced Search: Powerful search capabilities for finding specific handles, memory regions, or strings within processes.
+\\ Plugins and Extensibility: Support for plugins that can extend its functionality and integrate with other tools.
+
+Common Uses
+
+\\ Performance Monitoring: Track resource usage to diagnose performance issues on a system.
+\\ Malware Analysis: Analyze suspicious processes and services to identify potential threats.
+\\ Debugging: Use memory inspection and process management features for software development and debugging.
+\\ System Administration: Manage and monitor services and processes on servers or workstations.
+
+Basic Usage
+
+\\ Download and Install: Get Process Hacker from the official website.
+\\ Launch the Application: Open Process Hacker with administrator privileges for full functionality.
+\\ View Processes: The main window displays a list of running processes along with details like CPU and memory usage.
+
+Manage Processes:
+\\ Right-click on a process to terminate, suspend, or change its priority.
+\\ Use the "Properties" option to view detailed information about a specific process.
+\\ Monitor System Performance: Use the "System Information" or "Performance" tabs to monitor overall system health.
+\\ Inspect Memory: Right-click on a process and select "Properties," then navigate to the "Memory" tab to view and edit memory contents.
+
+Example Workflow.
+
+\\ Open Process Hacker.
+\\ Locate a Process (e.g., example.exe).
+\\ Check Resource Usage: Look at CPU and memory usage to assess performance.
+\\ Terminate a Process: If necessary, right-click and select "Terminate" to stop a non-responsive application.
+\\ Analyze Memory: For debugging, right-click the process, choose "Properties," and inspect its memory.
+
+Caution
+\\ Admin Rights: Some features require administrative privileges; run as administrator for full access.
+\\ Use with Care: Modifying processes or memory can lead to system instability; ensure you know what changes you're making.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. SnoopWPF
+
+SnoopWPF is a powerful tool used for inspecting and debugging WPF (Windows Presentation Foundation) applications. 
+It allows developers to explore the visual tree of a WPF application at runtime, making it easier to analyze and modify the UI elements and their properties.
+
+Key Features
+
+\\ Visual Tree Inspection: View the complete visual tree of a WPF application, helping you understand the hierarchy of UI elements.
+\\ Property Editing: Modify properties of UI elements in real time to see changes immediately, which is useful for debugging layout issues.
+\\ Event Monitoring: Inspect and log events that are being fired in the application, aiding in debugging event-related issues.
+\\ Resource Management: View and modify resources (like styles and templates) used in the application.
+\\ Support for Multiple Versions: Works with various versions of .NET Framework and WPF applications.
+\\ XAML Viewer: View the XAML representation of UI elements, providing insights into how the UI is constructed.
+
+Common Uses
+
+\\ Debugging UI Issues: Identify and troubleshoot visual issues in WPF applications by inspecting properties and layout at runtime.
+\\ Testing Styles and Templates: Experiment with different styles and templates without altering the source code.
+\\ Learning Tool: Helps new developers understand the structure and behavior of WPF applications by exploring the visual tree.
+
+Download: Get SnoopWPF from the official GitHub repository.
+
+Usage
+
+\\ Run Snoop: Start the SnoopWPF application.
+
+Attach to Process:
+\\ Use the "Attach to Process" dialog to select the WPF application you want to inspect. This will hook Snoop into the application’s runtime.
+
+Explore the Visual Tree:
+\\ Once attached, you can navigate the visual tree on the left pane, selecting different elements to view their properties.
+
+Edit Properties:
+\\ In the right pane, you can edit properties of the selected UI element and see changes reflected immediately in the application.
+
+Monitor Events:
+\\ Use the event monitoring features to view which events are being triggered and their associated handlers.
+
+Example Workflow
+
+\\ Open SnoopWPF and attach it to your running WPF application.
+\\ Select a UI Element from the visual tree.
+\\ Modify Properties like Visibility, Margin, or Background to see immediate effects in the application.
+\\ Monitor Events to troubleshoot interactions or unexpected behaviors.
+
+Caution
+
+\\ Performance Impact: Using Snoop may affect the performance of the application being inspected, especially for complex UIs.
+\\ Read-Only Mode: Be cautious when modifying properties, as some changes may lead to unexpected behavior if not tested thoroughly.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
