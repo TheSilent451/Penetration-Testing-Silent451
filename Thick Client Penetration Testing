@@ -71,3 +71,5 @@ Applications
 \\ Reverse Engineering: Useful for understanding third-party libraries or applications when source code is not available.
 \\ Debugging: Helps developers debug and analyze .NET applications.
 \\ Security Analysis: Used in security research to inspect .NET malware or potentially harmful applications.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
