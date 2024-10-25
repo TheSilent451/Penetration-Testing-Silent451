@@ -271,3 +271,46 @@ Caution
 // Read-Only: WinSpy is a passive tool; it doesn’t modify the application or its controls.
 // Compatibility: Ensure you are using a version of WinSpy that is compatible with the specific technologies used in your target application (e.g., Win32, WPF).
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. Echo Mirage
+
+Echo Mirage is a tool designed for inspecting and analyzing .NET applications, particularly those built with Windows Presentation Foundation (WPF) and Windows Forms. It enables developers and testers to view and manipulate the user interface (UI) of applications at runtime.
+
+Key Features
+
+// UI Inspection: Allows you to examine the properties and hierarchy of UI elements in a running application, providing insights into how the UI is constructed.
+// Real-Time Editing: Users can modify properties of UI elements on the fly, which is useful for debugging and testing different layouts or styles.
+// Event Monitoring: Captures events triggered by UI interactions, helping developers understand how users interact with the application.
+// Accessibility Insights: Provides information related to accessibility, aiding in the development of inclusive applications.
+// Support for Automation: Facilitates automation testing by making it easier to identify elements that can be manipulated through automation frameworks.
+
+Common Uses
+
+// Debugging: Developers can use Echo Mirage to troubleshoot UI-related issues by inspecting the properties of controls and elements.
+// Testing: Testers can leverage the tool to gather information about UI elements for writing automated test scripts.
+// Accessibility Compliance: Ensures that applications meet accessibility standards by analyzing UI elements.
+
+Download and Install: Obtain Echo Mirage from its official website or a trusted source.
+
+Usage
+
+// Launch the Application: Start Echo Mirage and attach it to the target .NET application.
+// Inspect UI Elements: Use the tool to hover over and select various controls in the application, viewing their properties and hierarchy.
+// Edit Properties: Modify control properties in real time to see immediate effects in the UI.
+// Monitor Events: Capture events to understand user interactions and ensure proper functionality.
+
+Example Workflow
+
+// Open Echo Mirage and the application you want to inspect.
+// Attach to the Running Application.
+// Select a UI Element to view its properties.
+// Edit Properties to test different UI configurations.
+// Monitor Events to analyze user interactions.
+
+Caution
+
+// Read-Only Use: While Echo Mirage allows property modifications, be cautious, as changes may lead to unexpected application behavior.
+// Compatibility: Ensure the tool is compatible with the technologies used in your application (e.g., .NET Framework, WPF).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
