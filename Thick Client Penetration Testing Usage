@@ -313,4 +313,51 @@ Caution
 // Compatibility: Ensure the tool is compatible with the technologies used in your application (e.g., .NET Framework, WPF).
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Procmon
 
+Process Monitor (Procmon) is a powerful system monitoring tool from Microsoft’s Sysinternals Suite. It combines the features of two older Sysinternals utilities, Filemon and Regmon, and provides detailed monitoring of file system, registry, process, and thread activity in real time. It is widely used for troubleshooting and understanding system and application behavior.
+
+Key Features
+
+// Real-Time Monitoring: Captures and displays real-time file system, registry, and process/thread activity, allowing for in-depth analysis of system operations.
+// Comprehensive Filters: Offers advanced filtering options to focus on specific processes, operations, or error events, making it easier to pinpoint issues.
+// Detailed Event Information: Provides extensive details about each event, including timestamps, operation type, result, and the involved objects (files, registry keys, etc.).
+// Logging: Allows you to save captured events to a file for later analysis, which is helpful for detailed investigations.
+// Integration: Can be used in conjunction with other Sysinternals tools for enhanced troubleshooting.
+
+Common Uses
+
+// Troubleshooting Applications: Identify why an application is failing or behaving unexpectedly by monitoring its file and registry access.
+// Performance Monitoring: Analyze how applications interact with the file system and registry to diagnose performance issues.
+// Malware Analysis: Observe what changes malware might make to the system, such as file modifications or registry changes.
+// Debugging: Assist developers in understanding how their applications interact with the operating system.
+
+
+Download and Run: Download Procmon from the Microsoft Sysinternals website and run the executable (no installation is required).
+
+Usage
+
+// Start Monitoring: Upon launching, Procmon automatically starts capturing events. You can stop the capture using the toolbar button.
+// Apply Filters: To narrow down the events:
+// Click on Filter in the menu.
+// Set conditions based on processes, paths, or event types (e.g., only show events related to a specific application).
+// Analyze Events: Click on any event to view detailed information in the lower pane. This includes the operation type, result, and other context-specific details.
+// Save Log Files: Once you’ve captured the necessary data, you can save the log for later analysis by going to File > Save.
+
+Example Workflow
+
+// Open Procmon and start capturing events.
+// Reproduce the Issue in the application you are investigating.
+// Stop Capturing events after reproducing the issue.
+// Apply Filters to show only relevant events (e.g., filter by process name).
+// Review Events for errors or unexpected behavior to diagnose the problem.
+
+Caution
+
+// High Volume of Data: Procmon can generate a large amount of data quickly, which may affect system performance. Use filtering to reduce the amount of logged data.
+// Security: Be cautious when using Procmon in production environments, as it can expose sensitive information about file and registry access.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
