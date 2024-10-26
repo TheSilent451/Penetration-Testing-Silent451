@@ -46,7 +46,6 @@ Applications
 \\ Debugging: Developers can use it to inspect binaries for error messages or other textual data that may assist in debugging.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 2.ILSpy
 
 ILSpy is an open-source .NET assembly browser and decompiler. It's a powerful tool for inspecting and analyzing .NET assemblies, allowing you to view the source code and metadata of compiled .NET applications.
@@ -73,7 +72,6 @@ Applications
 \\ Security Analysis: Used in security research to inspect .NET malware or potentially harmful applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 3. WinHex
 
 WinHex is a powerful hex editor and disk editor designed for data recovery, computer forensics, and low-level data processing.
@@ -125,7 +123,6 @@ Caution
 \\ WinHex offers a free version with limited features, while a professional version requires a paid license for access to advanced capabilities.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 4. Process Hacker
 
 Process Hacker is a powerful and versatile tool for monitoring and managing processes on Windows systems.
@@ -174,7 +171,6 @@ Caution
 \\ Use with Care: Modifying processes or memory can lead to system instability; ensure you know what changes you're making.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 5. SnoopWPF
 
 SnoopWPF is a powerful tool used for inspecting and debugging WPF (Windows Presentation Foundation) applications. 
@@ -226,7 +222,6 @@ Caution
 \\ Read-Only Mode: Be cautious when modifying properties, as some changes may lead to unexpected behavior if not tested thoroughly.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 6. WinSpy
 
 WinSpy is a lightweight tool used for inspecting and analyzing windows and controls in Windows applications.
@@ -440,6 +435,56 @@ Example Workflow
 // Check Startup Items: Use Autoruns to see what applications are set to start with Windows and disable unnecessary ones.
 // Network Analysis: If you suspect network issues, use TCPView to see active connections and identify any suspicious activity.
 // Create a Virtual Disk: If you want to migrate a physical machine to a virtual environment, use Disk2vhd to create a VHD file.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11. dnSpy
+
+dnSpy is a popular open-source .NET debugger and assembly editor that allows users to inspect, edit, and debug .NET applications. 
+It’s particularly useful for developers, security researchers, and reverse engineers working with .NET frameworks.
+
+Key Features
+
+// Decompilation: dnSpy can decompile .NET assemblies, turning compiled code back into readable C# or VB.NET source code. This is especially useful for understanding third-party libraries or legacy applications.
+// Editing: Users can modify the decompiled code and save changes back to the assembly, allowing for real-time updates to applications.
+// Debugging: dnSpy supports debugging .NET applications with features such as breakpoints, step execution, and variable inspection, making it a powerful tool for troubleshooting and analysis.
+// Plugin Support: dnSpy allows for the integration of plugins, enabling users to extend its functionality based on specific needs.
+// Support for Different .NET Versions: It works with various .NET versions, including .NET Framework, .NET Core, and Mono.
+
+Common Uses
+
+// Reverse Engineering: Security researchers can analyze how applications work or find vulnerabilities by decompiling and debugging them.
+// Debugging: Developers can troubleshoot issues in their applications by attaching dnSpy to a running process.
+// Learning and Education: It’s a great resource for learning how certain .NET libraries work or for studying programming patterns.
+
+Download and Install:
+// Download dnSpy from its GitHub repository or official site.
+// Extract the files to a folder on your computer; it does not require installation.
+
+Usage
+
+Open an Assembly:
+// Launch dnSpy and use the File > Open menu to load a .NET assembly (e.g., a .dll or .exe file).
+// Decompile Code:Once the assembly is loaded, navigate through the namespace and classes to view the decompiled code.
+// The decompiled code will appear in the right pane.
+
+Edit Code:
+// Right-click on a method or class and select Edit Method or Edit Class to modify the code.
+// After making changes, save the assembly using File > Save Module.
+
+Debugging:
+// To debug an application, select Debug > Start Debugging or attach to an already running process via Debug > Attach to Process.
+// Set breakpoints by clicking in the margin next to the code line and use the debugging controls to step through code execution.
+
+Plugins:
+// To add functionality, explore available plugins that can enhance dnSpy’s capabilities. You can load them through the Plugins menu.
+
+Example Workflow
+
+// Open dnSpy and load the target assembly.
+// Inspect the Code to identify the area of interest or potential issues.
+// Edit a Method to fix a bug or change behavior.
+// Save the Modified Assembly and run it to see the effects.
+// Debug the Application by setting breakpoints and stepping through the code to analyze runtime behavior.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
