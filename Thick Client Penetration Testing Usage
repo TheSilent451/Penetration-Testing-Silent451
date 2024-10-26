@@ -592,7 +592,59 @@ Search History:
 // Use your search history to quickly access previous queries, which can save time during repetitive tasks.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14.DLL Hijack Auditor
 
+DLL Hijack Auditor is a security tool designed to help identify potential vulnerabilities related to Dynamic Link Library (DLL) hijacking in Windows environments. 
+DLL hijacking occurs when an application loads a malicious DLL file instead of the legitimate one, potentially allowing an attacker to execute harmful code.
+
+Key Features
+
+Scan for Vulnerabilities:
+Automatically scans applications to identify DLL hijacking vulnerabilities by checking their loading behavior and paths.
+
+Report Generation:
+Generates detailed reports highlighting vulnerable applications, including information on the specific DLLs and their locations.
+
+File Path Analysis:
+Analyzes the paths from which applications are loading DLLs to determine if a potentially unsafe path is being used.
+
+Recommendations:
+Provides recommendations for mitigating identified risks, such as altering search paths or implementing security measures.
+
+User-Friendly Interface:
+Features an intuitive interface that allows users to easily initiate scans and review findings.
+
+Download and install DLL Hijack Auditor from a trusted source.
+
+Usage
+
+Launching the Application:
+
+Open DLL Hijack Auditor from your desktop or start menu.
+
+Configuring Settings (if applicable):
+Check the settings menu for options to customize the scan, such as specifying directories or types of files to include or exclude.
+
+Running a Scan:
+Click on the “Scan” or “Start Scan” button.
+Choose to scan the entire system or select specific applications or directories.
+The scan may take some time, depending on the size of the directories being analyzed.
+
+Reviewing Scan Results:
+Once the scan is complete, navigate to the results tab or section.
+The report will list applications identified as vulnerable to DLL hijacking, along with details about the DLLs involved.
+
+Analyzing Vulnerabilities:
+Click on individual entries to view detailed information about each vulnerability, including the path of the vulnerable DLL and the associated application.
+
+Taking Action:
+Follow the recommendations provided for each vulnerability, which may include:
+Updating the application to the latest version.
+Modifying the application’s configuration to load DLLs from secure paths.
+Implementing additional security measures, like setting user permissions.
+
+Generating Reports:
+If needed, export the scan results to a report format (e.g., PDF, CSV) for documentation or further analysis.
 
 
 
