@@ -487,6 +487,65 @@ Example Workflow
 // Debug the Application by setting breakpoints and stepping through the code to analyze runtime behavior.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12.OllyDbg
+
+OllyDbg is a powerful, 32-bit assembler-level debugger for Windows. It is particularly well-suited for reverse engineering applications and debugging software without source code. 
+OllyDbg is commonly used by security researchers, malware analysts, and software developers for various tasks, including code analysis, vulnerability discovery, and patching.
+
+Key Features
+
+// User-Friendly Interface: OllyDbg has a clean and intuitive interface that makes it accessible for both beginners and advanced users.
+// Dynamic Analysis: It allows users to monitor the execution of programs in real time, providing insights into how applications behave.
+// Assembly-Level Debugging: Users can view and manipulate the assembly code of applications, which is essential for low-level debugging and reverse engineering.
+// Breakpoint Management: Set conditional breakpoints to halt execution at specific points or under certain conditions.
+// Memory and Process Inspection: View and modify the memory and registers of the running process, enabling in-depth analysis of application behavior.
+// Scripting Support: Allows automation of repetitive tasks through scripting, enhancing efficiency during debugging sessions.
+
+Common Uses
+
+// Reverse Engineering: Analyzing software to understand its behavior, functionality, or to discover vulnerabilities.
+// Malware Analysis: Examining malicious software to understand its mechanisms and potential impact.
+// Debugging Applications: Identifying and fixing bugs in compiled applications without access to the source code.
+// Patching Executables: Modifying binary files to change their behavior or remove limitations.
+
+Download and Install:https://www.ollydbg.de/download.htm
+Extract the files to a directory of your choice; it does not require installation.
+
+Usage
+
+// Launch OllyDbg and open the target executable by selecting File > Open.
+// The application will be analyzed, and the disassembled code will be displayed.
+
+Navigating the Interface:
+// Use the main windows to view the disassembly, memory, and registers.
+// Familiarize yourself with the toolbar and menus for setting breakpoints, running code, and inspecting variables.
+
+Setting Breakpoints:
+// Right-click on a line of code and select Breakpoint > Toggle to set a breakpoint.
+// You can also set conditional breakpoints by using the Breakpoint Options.
+
+Running the Application:
+// Start execution by clicking the Run button or pressing F9.
+// When execution hits a breakpoint, the program will pause, allowing you to inspect the state.
+
+Inspecting Memory and Registers:
+// Use the Memory and CPU windows to view and modify memory contents and register values.
+// Right-click on memory addresses to explore options for editing or adding data.
+
+Using Plugins:
+// OllyDbg supports plugins that can extend its functionality. Check for available plugins online and install them to enhance your debugging experience.
+
+Example Workflow
+
+// Open OllyDbg and load a target executable (e.g., MyApp.exe).
+// Analyze the Disassembly to find a specific function you want to investigate.
+// Set Breakpoints at the start of the function or critical points to monitor execution.
+// Run the Application and step through the code when it hits the breakpoint.
+// Inspect Memory and Registers to understand how the application manipulates data.
+// Modify Values if needed to test how changes affect execution.
+// Document Findings or create a patch if you intend to modify the behavior of the application.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
