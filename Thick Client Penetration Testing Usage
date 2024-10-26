@@ -338,7 +338,8 @@ Download and Run: Download Procmon from the Microsoft Sysinternals website and r
 Usage
 
 // Start Monitoring: Upon launching, Procmon automatically starts capturing events. You can stop the capture using the toolbar button.
-// Apply Filters: To narrow down the events:
+
+Apply Filters: To narrow down the events:
 // Click on Filter in the menu.
 // Set conditions based on processes, paths, or event types (e.g., only show events related to a specific application).
 // Analyze Events: Click on any event to view detailed information in the lower pane. This includes the operation type, result, and other context-specific details.
@@ -394,6 +395,51 @@ Example Workflow
 // Start the Analysis and wait for the results.
 // Review the Findings, focusing on any highlighted vulnerabilities related to DLL loading.
 // Make Necessary Changes to the application code or configuration based on the recommendations.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Sysinternals Suite
+
+The Sysinternals Suite is a collection of advanced system utilities developed by Microsoft that provides tools for managing, troubleshooting, and diagnosing Windows systems and applications. 
+Originally created by Sysinternals, the suite was acquired by Microsoft and is now maintained by them.
+
+Key Features
+
+// Comprehensive Tools: The suite includes over 70 utilities covering a wide range of functions, such as process management, file and disk management, security, and network analysis.
+// Real-Time Monitoring: Many tools offer real-time monitoring of system activity, allowing for in-depth analysis of processes, file usage, and network connections.
+// Detailed Information: Provides detailed information about system resources, processes, and services, making it easier to troubleshoot issues.
+// Free to Use: All tools in the Sysinternals Suite are free and can be used without installation, making them accessible for quick troubleshooting.
+
+Commonly Used Tools
+
+// Process Explorer: A powerful alternative to Task Manager, providing detailed information about running processes, their handles, and threads.
+// Process Monitor: Combines file system, registry, and process/thread activity monitoring, useful for troubleshooting and diagnosing issues.
+// Autoruns: Displays all programs that run at startup, allowing users to manage and disable unnecessary startup items.
+// TCPView: Shows active TCP and UDP connections, providing information on which processes are using network resources.
+// Disk2vhd: Allows you to create VHD (Virtual Hard Disk) images from physical disks, making it easier to migrate to virtual environments.
+// Sysmon: A Windows service that logs system activity to the Windows event log, providing detailed information about process creation, network connections, and file creation.
+
+Download: https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite
+
+Usage
+
+Extract the Files:
+
+// Once downloaded, extract the contents to a folder on your system. The tools can be run directly from this folder.
+// Open a command prompt or navigate to the folder containing the tools and run the desired executable.
+// Most tools can also be run without administrator privileges, but some may require elevated permissions for full functionality.
+
+Analyze and Troubleshoot:
+
+// Use the various tools to gather information about your system, diagnose issues, or monitor performance. 
+// Each tool typically has its own set of features and interfaces, so refer to the documentation for specific usage instructions.
+
+Example Workflow
+
+// Identify an Issue: If you notice a performance slowdown, you might start with Process Explorer to identify any resource-heavy processes.
+// Monitor Activity: Use Process Monitor to log file and registry activity related to the suspected processes.
+// Check Startup Items: Use Autoruns to see what applications are set to start with Windows and disable unnecessary ones.
+// Network Analysis: If you suspect network issues, use TCPView to see active connections and identify any suspicious activity.
+// Create a Virtual Disk: If you want to migrate a physical machine to a virtual environment, use Disk2vhd to create a VHD file.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
