@@ -130,3 +130,44 @@ Output to File
 Applications
 // Web Application Testing: Security testers use it to identify hidden endpoints, files, and potential vulnerabilities in web applications.
 // Penetration Testing: Ethical hackers utilize Fuff as part of their toolset to explore and exploit security weaknesses.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. DIRB
+DIRB is a web content scanner that helps discover resources on web servers. It uses a wordlist to brute-force directories and files. Here’s a concise overview:
+
+Purpose
+// Directory and File Enumeration: DIRB scans a specified URL to find hidden directories and files by attempting to access them based on a given wordlist.
+// Security Testing: Useful in penetration testing to identify potential vulnerabilities in web applications.
+
+Features
+// Custom Wordlists: Users can specify their own wordlists to tailor the scan to specific applications or environments.
+// Response Filtering: It can filter results based on HTTP response codes, allowing users to focus on potentially interesting files or directories.
+// Recursive Scanning: DIRB can perform recursive scans to discover deeper directory structures.
+
+Usage
+
+Basic Command
+// To scan a target URL with the default wordlist:dirb http://example.com
+
+Using a Custom Wordlist
+// To specify a custom wordlist:dirb http://example.com /path/to/wordlist.txt
+
+Filtering by Response Code
+// To filter results by specific HTTP status codes:dirb http://example.com -r
+
+Output to File
+// To save the output to a file:dirb http://example.com -o output.txt
+
+Example Command
+// dirb http://example.com /path/to/wordlist.txt -o output.txt
+// This command will scan the specified URL with the custom wordlist and save the results to output.txt.
+
+Applications
+// Web Application Testing: Security professionals use it to uncover hidden endpoints and sensitive files.
+// Penetration Testing: A valuable tool for ethical hackers looking to assess the security of web applications.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
