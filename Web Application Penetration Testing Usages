@@ -4,10 +4,28 @@
 sqlmap -r any.txt --dbs
 
 // in any.txt save the request you need to inject [  Capture the Request in burpsite and save it in a .txt file  ]
+
 // The command sqlmap -r any.txt --dbs is used with sqlmap, a popular open-source penetration testing tool for detecting and exploiting SQL injection vulnerabilities in web applications.
 // Here's a breakdown of the command:
 // -r any.txt: This option tells sqlmap to read the HTTP request from a file named any.txt. This file should contain the full HTTP request, including headers and any payload data.
 // --dbs: This option instructs sqlmap to enumerate the databases present in the target application.
+
+sqlmap -r any.txt --os-shell
+
+// in any.txt save the request you need to inject [  Capture the Request in burpsite and save it in a .txt file  ]
+
+// In the command sqlmap -r test.txt --os-shell, the options --os-shell are used as follows:
+// --os-shell: This option is a command within sqlmap that attempts to provide you with an interactive operating system shell on the target server after exploiting a SQL injection vulnerability.
+
+// Explanation of Terms
+// --os: This part of the command refers to the option that allows sqlmap to interact with the underlying operating system of the target server.
+// shell: This specifies that you want to obtain a shell interface, allowing you to execute commands directly on the server's operating system.
+
+Usage Context
+
+// When you run this command, sqlmap will:
+// Attempt to exploit the SQL injection based on the request in test.txt.
+// If successful, it will give you a shell interface where you can run commands as if you were logged into the server.
 
 sqlmap-u "http://the url u want to inject with the id " --batch
 example: sqlmap-u "http://192.168.0.0/room.php?cod=1" –batch
