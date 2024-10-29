@@ -291,6 +291,59 @@ Applications
 // Penetration Testing: An essential tool for ethical hackers during the assessment phase of web applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. XSS Strike
 
+XSS Strike is an advanced tool designed for finding and exploiting Cross-Site Scripting (XSS) vulnerabilities in web applications.
+It automates the process of testing various payloads and helps security professionals assess the security of web applications.
+
+Purpose
+
+// XSS Vulnerability Detection: XSS Strike is specifically built to discover XSS vulnerabilities by injecting payloads into web application parameters and analyzing responses.
+// Payload Automation: It streamlines the testing process by automatically injecting a wide range of XSS payloads.
+
+Features
+
+// Advanced Payloads: Comes with a comprehensive set of XSS payloads to test various scenarios.
+// Recursive Scanning: Supports recursive scanning to discover XSS vulnerabilities in deeply nested parameters.
+// User-Friendly Interface: Provides a simple command-line interface to perform scans efficiently.
+// Output Reports: Generates reports summarizing findings, which can be useful for further analysis.
+
+Installation
+
+// Clone the Repository
+// You can clone the XSS Strike GitHub repository: git clone https://github.com/s0md3v/XSStrike.git
+// cd XSStrike
+// Install Dependencies
+// Make sure you have Python 3 installed. Install the required dependencies:
+// pip install -r requirements.txt
+// Run XSS Strike
+// You can run XSS Strike using Python: python xsstrike.py
+
+Usage
+
+Basic Scan
+// To perform a scan on a target URL:
+// python xsstrike.py -u http://example.com/page?param=value
+
+Using Custom Payloads
+// To use custom payloads, you can specify a payload file:
+// python xsstrike.py -u http://example.com/page?param=value -p /path/to/payloads.txt
+
+Verbose Mode
+// To enable verbose output:
+// python xsstrike.py -u http://example.com/page?param=value -v
+
+Output to File
+// To save results to a file:
+// python xsstrike.py -u http://example.com/page?param=value -o output.txt
+
+Example Command
+// python xsstrike.py -u http://example.com/search?q=<script>alert(1)</script> -v
+// This command tests the specified query parameter for XSS vulnerabilities using a basic payload and enables verbose output.
+
+Applications
+
+// Web Application Security Testing: Used by security testers to find and exploit XSS vulnerabilities in applications.
+// Penetration Testing: An essential tool for ethical hackers during the assessment phase of web applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
