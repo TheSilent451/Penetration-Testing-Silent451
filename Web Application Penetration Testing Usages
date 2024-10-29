@@ -218,7 +218,77 @@ Applications
 // Penetration Testing: Ethical hackers rely on Nmap to gather information about targets before conducting further testing.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. Dalfox
 
+Dalfox is a fast and powerful tool designed for detecting and exploiting XSS (Cross-Site Scripting) vulnerabilities in web applications. It is highly useful for security professionals and penetration testers.
+
+Purpose
+
+// XSS Vulnerability Detection: Dalfox scans web applications to identify potential XSS vulnerabilities by injecting various payloads into parameters and analyzing the responses.
+// Payload Automation: Automates the process of testing multiple endpoints with different payloads to find XSS issues quickly.
+
+Features
+
+// Fast Scanning: Designed for high-speed scanning, allowing users to quickly test large numbers of endpoints.
+// Custom Payloads: Supports custom payloads for more targeted testing.
+// Contextual Scanning: Can detect different types of XSS (e.g., reflected, stored) based on the application context.
+// Report Generation: Generates reports to summarize the findings for further analysis.
+
+Installation
+
+// Dalfox Installation on Kali Linux
+// To install Dalfox on Kali Linux, you can follow these methods:
+
+1. Using Go (Recommended)
+// Install Go (if not already installed):
+// sudo apt update
+// sudo apt install golang
+// Install Dalfox:
+// go install github.com/hahwul/dalfox/v2@latest
+// Add Go binaries to your PATH (if not already added):
+// echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+// source ~/.bashrc
+
+2. Downloading Precompiled Binaries
+// Download the latest binary:
+// wget https://github.com/hahwul/dalfox/releases/latest/download/dalfox-linux-amd64
+// Make the binary executable:
+// chmod +x dalfox-linux-amd64
+// Move it to a directory in your PATH:
+// sudo mv dalfox-linux-amd64 /usr/local/bin/dalfox
+
+3. Using Docker
+// If you prefer using Docker, you can run Dalfox in a container with the following command:
+// docker run -it --rm --name dalfox hahwul/dalfox
+// Verifying Installation
+// After installation, you can verify that Dalfox is installed correctly by checking its version:
+// dalfox -v
+
+Usage
+
+Basic Scan
+// To perform a basic scan on a target URL:dalfox url <URL>
+
+Using a Custom Payload File
+// To specify a custom payload file:dalfox url <URL> --payload /path/to/payloads.txt
+
+JSON Output
+// To output results in JSON format:dalfox url <URL> --json
+
+Multiple URLs
+// To scan multiple URLs from a file:dalfox file <urls.txt>
+
+Verbose Mode
+// To enable verbose output for more detailed information during the scan:dalfox url <URL> -v
+
+Example Command
+// dalfox url http://example.com/search?q=<script>alert(1)</script> --json
+// This command will test the specified search parameter for XSS vulnerabilities using the default payloads and output the results in JSON format.
+
+Applications
+
+// Web Application Security Testing: Used by security professionals to find and exploit XSS vulnerabilities in web applications.
+// Penetration Testing: An essential tool for ethical hackers during the assessment phase of web applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
