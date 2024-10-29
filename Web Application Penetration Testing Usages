@@ -171,6 +171,56 @@ Applications
 // Penetration Testing: A valuable tool for ethical hackers looking to assess the security of web applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Nmap
+
+Nmap (Network Mapper) is a powerful open-source tool used for network discovery and security auditing.
+It’s widely utilized by network administrators and security professionals to identify devices on a network, discover services, and assess security vulnerabilities.
+
+Purpose
+
+// Network Discovery: Nmap can discover hosts and services on a computer network, providing insights into the devices connected and their operating systems.
+// Security Auditing: It helps in identifying vulnerabilities in networked systems, allowing security professionals to harden their defenses.
+
+Features
+
+// Port Scanning: Nmap can perform various types of port scans to determine which ports are open, closed, or filtered on a target system.
+// Service and Version Detection: It can identify running services on open ports and their versions, which is crucial for vulnerability assessment.
+// OS Detection: Nmap can determine the operating system of a target host through various techniques.
+// Scripting Engine: Nmap includes a scripting engine (NSE) that allows users to write scripts to automate a wide range of networking tasks.
+
+Usage
+
+Basic Scan
+// To scan a target IP or domain for open ports:nmap <target_ip_or_domain>
+// Example:nmap 192.168.1.1
+
+Service Version Detection
+// To detect services and versions running on the open ports:nmap -sV <target_ip_or_domain>
+
+Operating System Detection
+// To determine the operating system of the target:nmap -O <target_ip_or_domain>
+
+Aggressive Scan
+// To combine service detection, OS detection, and other features for a detailed analysis:nmap -A <target_ip_or_domain>
+
+Scan Multiple IPs
+// To scan a range of IPs:nmap 192.168.1.1-254
+
+Output to File
+// To save the results in a file:nmap -oN output.txt <target_ip_or_domain>
+// Example Command:nmap -sV -O 192.168.1.1
+// This command performs a service version detection and OS detection scan on the target IP 192.168.1.1.
+
+Applications
+
+// Network Security Auditing: Security professionals use Nmap to assess the security posture of networks by identifying vulnerabilities.
+// Network Inventory: System administrators utilize it to map out network devices and services for inventory and management purposes.
+// Penetration Testing: Ethical hackers rely on Nmap to gather information about targets before conducting further testing.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
