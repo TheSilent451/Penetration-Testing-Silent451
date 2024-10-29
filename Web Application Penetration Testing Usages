@@ -9,10 +9,10 @@ sqlmap -r any.txt --dbs
 // -r any.txt: This option tells sqlmap to read the HTTP request from a file named any.txt. This file should contain the full HTTP request, including headers and any payload data.
 // --dbs: This option instructs sqlmap to enumerate the databases present in the target application.
 
-
-sqlmap --wizard
 sqlmap-u "http://the url u want to inject with the id " --batch
 example: sqlmap-u "http://192.168.0.0/room.php?cod=1" –batch
+
+sqlmap --wizard [This command will open a sqlmap console]
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
