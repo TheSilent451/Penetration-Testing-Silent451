@@ -598,54 +598,80 @@ DLL Hijack Auditor is a security tool designed to help identify potential vulner
 DLL hijacking occurs when an application loads a malicious DLL file instead of the legitimate one, potentially allowing an attacker to execute harmful code.
 
 Key Features
-
-Scan for Vulnerabilities:
-Automatically scans applications to identify DLL hijacking vulnerabilities by checking their loading behavior and paths.
+// Scan for Vulnerabilities:
+// Automatically scans applications to identify DLL hijacking vulnerabilities by checking their loading behavior and paths.
 
 Report Generation:
-Generates detailed reports highlighting vulnerable applications, including information on the specific DLLs and their locations.
+// Generates detailed reports highlighting vulnerable applications, including information on the specific DLLs and their locations.
 
 File Path Analysis:
-Analyzes the paths from which applications are loading DLLs to determine if a potentially unsafe path is being used.
+// Analyzes the paths from which applications are loading DLLs to determine if a potentially unsafe path is being used.
 
 Recommendations:
-Provides recommendations for mitigating identified risks, such as altering search paths or implementing security measures.
+// Provides recommendations for mitigating identified risks, such as altering search paths or implementing security measures.
 
 User-Friendly Interface:
-Features an intuitive interface that allows users to easily initiate scans and review findings.
-
-Download and install DLL Hijack Auditor from a trusted source.
+// Features an intuitive interface that allows users to easily initiate scans and review findings.
 
 Usage
 
-Launching the Application:
-
-Open DLL Hijack Auditor from your desktop or start menu.
-
-Configuring Settings (if applicable):
-Check the settings menu for options to customize the scan, such as specifying directories or types of files to include or exclude.
+// Launching the Application:Open DLL Hijack Auditor from your desktop or start menu.
+// Configuring Settings (if applicable):Check the settings menu for options to customize the scan, such as specifying directories or types of files to include or exclude.
 
 Running a Scan:
-Click on the “Scan” or “Start Scan” button.
-Choose to scan the entire system or select specific applications or directories.
-The scan may take some time, depending on the size of the directories being analyzed.
+// Click on the “Scan” or “Start Scan” button.
+// Choose to scan the entire system or select specific applications or directories.
+// The scan may take some time, depending on the size of the directories being analyzed.
 
 Reviewing Scan Results:
-Once the scan is complete, navigate to the results tab or section.
-The report will list applications identified as vulnerable to DLL hijacking, along with details about the DLLs involved.
+// Once the scan is complete, navigate to the results tab or section.
+// The report will list applications identified as vulnerable to DLL hijacking, along with details about the DLLs involved.
 
 Analyzing Vulnerabilities:
-Click on individual entries to view detailed information about each vulnerability, including the path of the vulnerable DLL and the associated application.
+// Click on individual entries to view detailed information about each vulnerability, including the path of the vulnerable DLL and the associated application.
 
 Taking Action:
-Follow the recommendations provided for each vulnerability, which may include:
-Updating the application to the latest version.
-Modifying the application’s configuration to load DLLs from secure paths.
-Implementing additional security measures, like setting user permissions.
+// Follow the recommendations provided for each vulnerability, which may include:
+// Updating the application to the latest version.
+// Modifying the application’s configuration to load DLLs from secure paths.
+// Implementing additional security measures, like setting user permissions.
 
 Generating Reports:
-If needed, export the scan results to a report format (e.g., PDF, CSV) for documentation or further analysis.
-
-
+// If needed, export the scan results to a report format (e.g., PDF, CSV) for documentation or further analysis.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+15. fuff
+
+// Fuff is a powerful web application security tool designed for fuzzing endpoints.
+// It helps identify vulnerabilities by sending numerous requests based on a wordlist. Here are some key points about it:
+
+Purpose
+// Fuzzing: Fuff is primarily used to discover hidden endpoints and files by replacing a specific part of the URL with entries from a wordlist.
+// Security Testing: It assists security professionals in testing web applications for potential vulnerabilities.
+
+Features
+// High Performance: Fuff is optimized for speed and can handle multiple requests concurrently, making it efficient for large-scale fuzzing.
+// Flexible Output: Users can filter responses based on status codes, content lengths, and more, providing targeted results.
+// Custom Wordlists: Users can utilize custom wordlists to tailor the fuzzing process to specific applications or environments.
+
+Usage
+// Navigate to the Directory
+// Use the cd command to navigate to the folder where fuff is installed. For example:cd /path/to/fuff
+// Run the Command
+// Use the command to start fuzzing a target URL:fuff -u <URL> -w <wordlist>
+// Replace <URL> with your target and <wordlist> with the path to your wordlist file.
+
+Customize Options
+// Specify parameters like the number of threads or minimum response codes to filter. For example:fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt -mc 200
+
+Output to File
+// To save the output to a file, you can redirect it:fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt > output.txt
+// fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt -mc 200 > output.txt
+// This command will fuzz the specified URL with the provided wordlist and save responses with a 200 status code to output.txt.
+
+Applications
+// Web Application Testing: Security testers use it to identify hidden endpoints, files, and potential vulnerabilities in web applications.
+// Penetration Testing: Ethical hackers utilize Fuff as part of their toolset to explore and exploit security weaknesses.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
