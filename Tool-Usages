@@ -62,3 +62,37 @@ sniper -t 192.168.1.10 -o /path/to/output
 
 Running a Web Application Security Scan:
 sniper -t example.com --web
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.XSSFUZZ
+Usage
+Basic Scan
+python xssFuzz.py -u "<target_url>" -o output.txt
+This command runs a basic scan on the target URL and saves the results in output.txt.
+
+Verbose Output
+python xssFuzz.py -u "<target_url>" -o output.txt --verbose
+Provides more detailed information about the scan.
+
+Tag-Specific Testing
+python xssFuzz.py -u "<target_url>" --tag img -o output.txt
+Scan only specific HTML tags, such as <img>.
+
+Custom Payloads
+python xssFuzz.py -u "<target_url>" -p "<payload_file>" -o output.txt
+Use custom payloads to scan specific attack vectors.
+
+Custom Headers
+python xssFuzz.py -u "<target_url>" -H "Header1:Value,Header2:Value" -o output.txt
+Include custom headers in your scan.
+
+Limiting Scope
+python xssFuzz.py -u "<target_url>" --limit 5 -o output.txt
+Limit the scan to the first 5 tags and 5 events for faster results.
+
+Increasing Speed with Threads
+python xssFuzz.py -u "<target_url>" -t 10 -o output.txt
+Increase scan speed by running 10 concurrent threads.
+
+Validation Mode
+python xssFuzz.py -u "<target_url>" -V -o output.txt
