@@ -640,38 +640,6 @@ Generating Reports:
 // If needed, export the scan results to a report format (e.g., PDF, CSV) for documentation or further analysis.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-15. fuff
-
-// Fuff is a powerful web application security tool designed for fuzzing endpoints.
-// It helps identify vulnerabilities by sending numerous requests based on a wordlist. Here are some key points about it:
-
-Purpose
-// Fuzzing: Fuff is primarily used to discover hidden endpoints and files by replacing a specific part of the URL with entries from a wordlist.
-// Security Testing: It assists security professionals in testing web applications for potential vulnerabilities.
-
-Features
-// High Performance: Fuff is optimized for speed and can handle multiple requests concurrently, making it efficient for large-scale fuzzing.
-// Flexible Output: Users can filter responses based on status codes, content lengths, and more, providing targeted results.
-// Custom Wordlists: Users can utilize custom wordlists to tailor the fuzzing process to specific applications or environments.
-
-Usage
-// Navigate to the Directory
-// Use the cd command to navigate to the folder where fuff is installed. For example:cd /path/to/fuff
-// Run the Command
-// Use the command to start fuzzing a target URL:fuff -u <URL> -w <wordlist>
-// Replace <URL> with your target and <wordlist> with the path to your wordlist file.
-
-Customize Options
-// Specify parameters like the number of threads or minimum response codes to filter. For example:fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt -mc 200
-
-Output to File
-// To save the output to a file, you can redirect it:fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt > output.txt
-// fuff -u http://example.com/FUZZ -w /path/to/wordlist.txt -mc 200 > output.txt
-// This command will fuzz the specified URL with the provided wordlist and save responses with a 200 status code to output.txt.
-
-Applications
-// Web Application Testing: Security testers use it to identify hidden endpoints, files, and potential vulnerabilities in web applications.
-// Penetration Testing: Ethical hackers utilize Fuff as part of their toolset to explore and exploit security weaknesses.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
