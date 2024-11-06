@@ -1,0 +1,104 @@
+1.Amass
+
+Installation
+
+// First, ensure you have Go installed on your system, then you can install Amass using:
+// go install -v github.com/OWASP/Amass/v3/...@latest
+// Or you can download precompiled binaries from the Amass releases page.
+
+Important Note:
+
+// APIs: Register for services like VirusTotal, Shodan, and others to use their APIs for better data.
+// Verbose Mode: Use the -v flag for verbose output to troubleshoot or see more details during execution.
+
+Basic Usage
+Enumerating Subdomains: To find subdomains for a given domain, use:
+// amass enum -d example.com
+
+Output to a File: To save the results to a text file:
+// amass enum -d example.com -o subdomains.txt
+
+Using Multiple Data Sources: Amass can use different techniques for enumeration. You can specify sources with the -src option:
+// amass enum -d example.com -src
+
+Active and Passive Enumeration: You can specify the type of enumeration. For passive enumeration, use:
+// amass enum -passive -d example.com
+
+For active enumeration, simply run:
+// amass enum -active -d example.com
+
+DNS Resolution: If you want to resolve the discovered subdomains to IP addresses:
+// amass resolve -d example.com -o resolved_ips.txt
+
+Advanced Options
+
+Using Config Files: Amass can be configured using a configuration file for API keys and settings:
+// amass config -save
+
+Using Specific APIs: You can specify which APIs to use by modifying the configuration file or using command-line flags:
+// amass enum -d example.com -api <api_name>
+
+Visualizing Results: You can create a visual graph of the discovered subdomains:
+// amass viz -d example.com -o graph.svg
+
+Performing DNS Brute Force: To perform brute-force enumeration of subdomains:
+// amass enum -brute -d example.com
+
+Network Mapping: To visualize the entire network with connections:
+// amass track -d example.com -o track_output.txt
+
+Example Workflows
+
+ Basic Subdomain Enumeration and Resolution:
+// amass enum -d example.com -o subdomains.txt
+// amass resolve -o resolved_ips.txt -d example.com
+
+Full Enumeration with Visualization:
+// amass enum -d example.com -o subdomains.txt -src
+// amass viz -d example.com -o graph.svg
+
+// amass intel -d <domain> [options]
+
+Common Options
+
+Specify the Domain:
+// Use the -d flag to specify the target domain.
+// amass intel -d example.com
+
+Output Options:
+// To save the results to a file, use the -o option:
+// amass intel -d example.com -o output.txt
+
+Sources:
+// Use the -src option to include the sources from which data was gathered.
+// amass intel -d example.com -src
+
+Brute Forcing:
+// If you want to perform brute-force subdomain enumeration in addition to intelligence gathering, include the -brute option:
+// amass intel -d example.com -brute
+
+Passive Enumeration:
+
+To focus solely on passive reconnaissance:
+// amass intel -d example.com -passive
+
+API Usage:
+
+Amass can utilize various APIs for enhanced results. Ensure you've configured your API keys and use the -api option if necessary:
+// amass intel -d example.com -api <api_name>
+
+Verbose Output:
+
+For more detailed output, use the -v flag:
+// amass intel -d example.com -v
+
+Example Workflows
+
+Basic Intelligence Gathering:
+// amass intel -d example.com -o intel_results.txt
+
+Passive Intelligence Gathering with Source Information:
+amass intel -d example.com -passive -src -o passive_results.txt
+
+Combining Brute Force with Intelligence Gathering:
+// amass intel -d example.com -brute -o all_results.txt
