@@ -1,13 +1,14 @@
 EaseUS Data Recovery Wizard Free is a popular tool for recovering lost or deleted files from various storage devices, including hard drives, SSDs, USB drives, and memory cards. Here are some key features:
 
-User-Friendly Interface: The software is designed to be intuitive, making it easy for users of all levels to navigate.
+// User-Friendly Interface: The software is designed to be intuitive, making it easy for users of all levels to navigate.
+// File Recovery: It can recover a wide range of file types, including documents, photos, videos, and emails.
+// Scan Modes: It offers both quick and deep scan options. The quick scan retrieves recently deleted files, while the deep scan can find more elusive files.
+// Preview Function: Before recovering, you can preview files to ensure they are the ones you want to restore.
+// Limitations: The free version allows you to recover up to 2GB of data. If you need to recover more, you'll need to upgrade to the paid version.
+// To use it, simply download and install the software, run a scan on the desired drive, and follow the prompts to recover your files. 
+// Just remember not to install the software on the drive you're trying to recover from to avoid overwriting lost data.
 
-File Recovery: It can recover a wide range of file types, including documents, photos, videos, and emails.
+Usage
 
-Scan Modes: It offers both quick and deep scan options. The quick scan retrieves recently deleted files, while the deep scan can find more elusive files.
-
-Preview Function: Before recovering, you can preview files to ensure they are the ones you want to restore.
-
-Limitations: The free version allows you to recover up to 2GB of data. If you need to recover more, you'll need to upgrade to the paid version.
-
-To use it, simply download and install the software, run a scan on the desired drive, and follow the prompts to recover your files. Just remember not to install the software on the drive you're trying to recover from to avoid overwriting lost data.
+// Open the application and connect the hard disk externally so that if it gets disconnected, it can reconnect by unplugging and replugging the USB cable. 
+// Then, select the recovery option; it will scan the hard disk and recover files from every sector, even if some sectors are bad or corrupted.
