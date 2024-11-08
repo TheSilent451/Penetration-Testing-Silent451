@@ -1,0 +1,1 @@
+Ram mem speed check : wmic memorychip get speed
