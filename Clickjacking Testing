@@ -1,0 +1,37 @@
+1. Testing for Clickjacking
+
+<html>
+    <head>
+        <title>Clickjack test page</title>
+    </head>
+    <body>
+        <iframe src="http://www.target.site" width="500" height="500"></iframe>
+    </body>
+</html>
+
+
+
+2. Click Bandit
+
+// How to use the Click Bandit feature in Burp Suite:Open Burp Suite: Launch the application and ensure you have the desired target web application set up in your proxy.
+// Navigate to Click Bandit:Go to the "Extender" tab.
+// Search for the Click Bandit extension and install it if you haven’t already.
+
+Configure the Click Bandit:
+// Once installed, you can find Click Bandit in the "Tools" menu.
+// You can specify parameters such as the number of clicks, delay between clicks, and the type of requests (GET or POST).
+
+Select Targets:
+// Use the built-in browser to navigate to the target application.
+// Identify the elements you want to interact with, such as buttons or links.
+
+Start Clicking:
+// Set up your click parameters, then start the Click Bandit.
+// It will automatically simulate clicks based on your configurations.
+
+Monitor Requests:
+// Use the "HTTP history" tab to monitor the requests being sent and the responses from the server.
+// This helps you identify any issues or vulnerabilities in how the application handles user interactions.
+
+Adjust as Needed:
+// Based on the results, you might want to tweak your settings or focus on different elements.
