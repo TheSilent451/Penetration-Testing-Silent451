@@ -1,0 +1,24 @@
+After installing Tor 
+apt install tor
+
+in tor config [/etc/tor/torc]
+// set the socksport to 9050 
+// And remove the hash sockspolicy accept *
+
+// use this script to kill tor and get new ip
+
+import subprocess
+
+def cmd(cmd_name):
+        return subprocess.call(cmd_name,shell=True)
+
+
+
+
+import time
+
+while True:
+	print("[+] Rotating IP Address")
+	cmd("pkill -HUB tor")
+	time.sleep(0.5)
+#	time.sleep(10)
