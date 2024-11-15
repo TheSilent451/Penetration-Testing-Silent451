@@ -1,6 +1,9 @@
 1. Ram mem speed check : wmic memorychip get speed
 
-2. Installation withou admin privilege
-// Save this in bat extention
-   Set _COMPACT_LAYER=RunAsInvoker
-   Start SteamSetup.exe
+2. Installation without admin privilege
+   // Save this in bat extention
+   // Set _COMPACT_LAYER=RunAsInvoker
+   // Start SteamSetup.exe
+3.Linux
+   // add user - sudo adduser <username>
+   // nano /etc/sudoers - add [ root  ALL=(ALL:ALL) ALL ]
