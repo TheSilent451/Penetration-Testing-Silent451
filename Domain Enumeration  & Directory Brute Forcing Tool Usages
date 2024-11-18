@@ -102,3 +102,10 @@ amass intel -d example.com -passive -src -o passive_results.txt
 
 Combining Brute Force with Intelligence Gathering:
 // amass intel -d example.com -brute -o all_results.txt
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Ferox Buster
+
+// feroxbuster -u https://site.com 
+// feroxbuster -u https://site.com -w /usr/share/wordlists/dirb/big.txt
