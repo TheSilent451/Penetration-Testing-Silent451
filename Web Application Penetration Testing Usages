@@ -375,3 +375,46 @@ Applications
 // Penetration Testing: An essential tool for ethical hackers during the assessment phase of web applications.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Katana is a powerful tool designed for reconnaissance and information gathering. Here are some common usage patterns and commands:
+
+Installation:
+// CGO_ENABLED=1 go install github.com/projectdiscovery/katana/cmd/katana@latest
+
+Basic Command Structure
+
+// katana [flags] <target>
+// Common Flags
+// -h, --help: Display help information.
+// -o, --output: Specify the output file for results.
+// -p, --proxy: Set a proxy for requests.
+// -t, --timeout: Set a custom timeout for requests.
+// -d, --delay: Introduce a delay between requests to avoid rate limiting.
+
+Basic Usage:
+// katana -d example.com
+
+Output to a File:
+// katana -o results.txt -d example.com
+
+Using a Proxy:
+// katana -p http://localhost:8080 -d example.com
+
+Setting a Timeout:
+// katana -t 5s -d example.com
+
+Specifying a Delay:
+// katana -d example.com -D 1s
+
+Modules
+// Katana may include various modules for specific tasks, such as subdomain enumeration, vulnerability scanning, etc. You can typically list these modules with:
+// katana --list-modules
+
+Help Command
+// For detailed information on specific commands and options, you can always run:katana --help
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
