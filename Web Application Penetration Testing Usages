@@ -379,7 +379,14 @@ Applications
 9. Katana is a powerful tool designed for reconnaissance and information gathering. Here are some common usage patterns and commands:
 
 Installation:
+
+option - 1
 // CGO_ENABLED=1 go install github.com/projectdiscovery/katana/cmd/katana@latest
+option - 2 
+// docker pull projectdiscovery/katana:latest
+// To run katana in standard mode using docker - docker run projectdiscovery/katana:latest -u https://tesla.com
+// To run katana in headless mode using docker - docker run projectdiscovery/katana:latest -u https://tesla.com -system-chrome -headless
+
 
 Basic Command Structure
 
