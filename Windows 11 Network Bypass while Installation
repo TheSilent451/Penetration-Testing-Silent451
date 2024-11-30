@@ -1,2 +1,5 @@
-Windows 11 Network Bypass while Installation
+1. Windows 11 Network Bypass while Installation
 // Open cmd & enter the command : oobe\BypassNRO
+
+2. Windows 10-11 Activation 
+// Run this command on the powershell : irm https://get.activated.win | iex
