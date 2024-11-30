@@ -269,7 +269,8 @@ Caution
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 7. Echo Mirage
 
-Echo Mirage is a tool designed for inspecting and analyzing .NET applications, particularly those built with Windows Presentation Foundation (WPF) and Windows Forms. It enables developers and testers to view and manipulate the user interface (UI) of applications at runtime.
+Echo Mirage is a tool designed for inspecting and analyzing .NET applications, particularly those built with Windows Presentation Foundation (WPF) and Windows Forms. 
+It enables developers and testers to view and manipulate the user interface (UI) of applications at runtime.
 
 Key Features
 
