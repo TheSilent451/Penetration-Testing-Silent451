@@ -1,0 +1,140 @@
+Dommain Enumeration Methods & Sites
+// crt.sh
+// virustotal  - after searching in the relation tab you can find some sub domains
+// https://chaos.projectdiscovery.io/ - Maximum only Well Known companies Sub Domain list are available
+
+
+
+Tools:
+1. subfinder
+To install subfinder, you can use the following methods:
+
+// Go (recommended method):
+// go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+
+// Using Homebrew (for macOS/Linux):
+// brew install projectdiscovery/tap/subfinder
+// Using Pre-built Binaries: Download the binary from the official GitHub releases page and extract it.
+
+2. Basic Usage
+// Once installed, you can start using subfinder from the command line.
+// Basic command to find subdomains:
+// subfinder -d example.com
+// This will perform a subdomain enumeration for example.com and display the results in the terminal.
+
+// Specify multiple domains:
+// subfinder -d example.com -d example.org
+// This will search for subdomains for both example.com and example.org.
+
+// Save output to a file:
+// subfinder -d example.com -o subdomains.txt
+// This command saves the found subdomains to a file named subdomains.txt.
+
+3. Advanced Usage
+// Using custom resolvers: You can use custom DNS resolvers to speed up or refine your search.
+// subfinder -d example.com -r 8.8.8.8,8.8.4.4
+
+// Use specific wordlist for brute-forcing: If you want to perform a more extensive search using a custom wordlist for brute-forcing subdomains, you can use:
+// subfinder -d example.com -w /path/to/wordlist.txt
+
+// Using passive DNS providers: By default, subfinder uses a set of passive DNS providers to discover subdomains. You can specify which ones to use by using the -p flag:
+// subfinder -d example.com -p crtsh,virustotal
+// This command uses only crtsh and virustotal for passive DNS search.
+
+// Increasing verbosity: If you want more details about the enumeration process, use the -v flag to increase verbosity:
+// subfinder -d example.com -v
+
+4. Integrating with Other Tools
+// subfinder can be combined with other tools and scripts for automation. For example, it is often used with tools like assetfinder, amass, and nmap for a more comprehensive security assessment. You can also pipe subfinder output into other tools:
+// subfinder -d example.com -o - | nmap -iL -
+// This command pipes the subdomains found by subfinder directly into nmap for further scanning.
+
+5. Additional Options:
+// Show help and options:
+// subfinder -h
+// This will provide a list of all available options and flags.
+
+// Run subfinder to find subdomains for a target:
+// subfinder -d example.com -o subdomains.txt
+
+// Review the list of subdomains:
+// cat subdomains.txt
+
+// Use the discovered subdomains for further testing or scanning:
+// nmap -iL subdomains.txt
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.assetfinder
+
+// Install via Go (Recommended): If you have Go installed, you can install assetfinder directly from the terminal:
+// go install github.com/tomnomnom/assetfinder@latest
+// Install via Homebrew (macOS/Linux): If you're on macOS or Linux and use Homebrew, you can install assetfinder with:
+// brew install tomnomnom/tap/assetfinder
+// Install via Pre-built Binary: You can also download pre-built binaries from the GitHub releases page and follow the instructions to extract and use the tool.
+
+Basic Usage
+// Once installed, you can start using assetfinder from the command line. The tool will help you enumerate subdomains related to a given domain.
+
+1. Discover Subdomains for a Domain:
+// Run the basic command to find subdomains for a domain:
+// assetfinder example.com
+// This will return a list of subdomains for the example.com domain. The tool uses various passive DNS sources to discover these subdomains.
+
+2. Save Results to a File:
+// If you want to save the discovered subdomains to a file, use the > operator:
+// assetfinder example.com > subdomains.txt
+// This will save all the subdomains into subdomains.txt.
+
+3. Find Subdomains for Multiple Domains:
+// You can also discover subdomains for multiple domains by providing a list:
+// assetfinder domain1.com domain2.com
+
+// Or you can pass a text file containing a list of domains:
+// cat domains.txt | assetfinder
+
+4. Filter Unique Subdomains:
+// If you want to filter out duplicate subdomains from the output, use the sort and uniq commands:
+// assetfinder example.com | sort -u
+// This will sort and remove duplicate entries.
+
+Advanced Usage
+1. Using Wildcards:
+// If you want to automatically include subdomains with a wildcard (e.g., *.example.com), you can run:
+// assetfinder --wildcard example.com
+
+2. Use Custom DNS Resolvers:
+// You can specify custom DNS resolvers for more control over how subdomains are discovered:
+// assetfinder -r 8.8.8.8,8.8.4.4 example.com
+
+3. Passive Mode:
+// By default, assetfinder uses passive sources to gather subdomains, meaning it doesn't directly query the target’s DNS servers. This is useful when trying to avoid detection. You can combine assetfinder with tools like subfinder to // perform passive recon.
+
+4. Brute Force Subdomains:
+// assetfinder doesn't support brute-forcing directly, but you can combine it with other tools like subfinder or dnsgen to attempt subdomain enumeration via wordlists.
+
+5. Using Custom Wordlist:
+// While assetfinder doesn't natively support brute-forcing, it can work in conjunction with other tools to perform extensive subdomain discovery. For example:
+// assetfinder -w /path/to/wordlist.txt example.com
+
+Piping Output to Other Tools
+// assetfinder can be used in conjunction with other tools for further analysis:
+
+// Piping Results to Nmap: You can pass the output of assetfinder directly to Nmap for scanning:
+// assetfinder example.com | nmap -iL -
+
+// Piping Results to Other Recon Tools: If you want to use the discovered subdomains in another tool, simply pipe the output:
+// assetfinder example.com | waybackurls
+
+Example Workflow
+
+// Run Assetfinder for Subdomains:
+// assetfinder example.com > subdomains.txt
+
+// Sort the Results and Remove Duplicates:
+// cat subdomains.txt | sort -u > unique_subdomains.txt
+
+// Run Nmap or Another Tool to Scan the Subdomains:
+// cat unique_subdomains.txt | nmap -iL -
+
+// You can view all available options and help for assetfinder by running:
+// assetfinder --help
