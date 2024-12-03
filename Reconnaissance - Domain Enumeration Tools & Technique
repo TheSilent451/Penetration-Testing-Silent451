@@ -16,6 +16,8 @@ To install subfinder, you can use the following methods:
 // brew install projectdiscovery/tap/subfinder
 // Using Pre-built Binaries: Download the binary from the official GitHub releases page and extract it.
 
+// sudo subfinder -d example.com -all >1.txt
+
 2. Basic Usage
 // Once installed, you can start using subfinder from the command line.
 // Basic command to find subdomains:
@@ -71,6 +73,8 @@ To install subfinder, you can use the following methods:
 // Install via Homebrew (macOS/Linux): If you're on macOS or Linux and use Homebrew, you can install assetfinder with:
 // brew install tomnomnom/tap/assetfinder
 // Install via Pre-built Binary: You can also download pre-built binaries from the GitHub releases page and follow the instructions to extract and use the tool.
+
+// sudo assetfinder -subs-only example.com >1.txt
 
 Basic Usage
 // Once installed, you can start using assetfinder from the command line. The tool will help you enumerate subdomains related to a given domain.
