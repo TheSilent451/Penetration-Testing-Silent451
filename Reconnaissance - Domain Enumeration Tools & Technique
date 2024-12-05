@@ -310,3 +310,40 @@ HTTP Authentication:
 // httpx -u https://example.com -auth user:password
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. waybackurls 
+waybackurls is a popular open-source tool developed by ProjectDiscovery. It is designed to automate the process of retrieving URLs from the Wayback Machine for a given target domain. 
+This tool helps you pull historical URLs (or subdomains) that might no longer be active.
+
+Installation
+// To install waybackurls, you can use Go (if you have Go installed) or download the precompiled binaries directly from the GitHub repository.
+
+Install with Go:
+// go install github.com/projectdiscovery/waybackurls/cmd/waybackurls@latest
+// Alternatively, download precompiled binaries: Go to the releases page and download the appropriate binary for your operating system.
+
+Usage
+
+The basic syntax for using waybackurls is:
+// waybackurls <domain_or_url>
+
+For example, if you want to fetch historical URLs for example.com:
+// waybackurls example.com
+// This will return a list of URLs that the Wayback Machine has archived for that domain.
+
+Options
+// -o output.txt: Save the results to a file.
+
+Example:
+// waybackurls example.com -o wayback_urls.txt
+// -n: Remove duplicates from the output.
+
+Example:
+// waybackurls example.com -n
+// -t timeout: Set a custom timeout for the HTTP request (in seconds).
+
+Example:
+// waybackurls example.com -t 20
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
