@@ -142,3 +142,47 @@ Example Workflow
 
 // You can view all available options and help for assetfinder by running:
 // assetfinder --help
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Subzy is a tool used to identify subdomain takeover vulnerabilities. Here’s a quick guide on how to use it:
+3.subzy
+
+Subzy is a Subdomain Takeover Tool and can be used to identify the domain or domains vulnerable to subdomain takeover vulnerability.
+
+Installation:
+// Ensure you have Go language installed on your system.
+// Install Subzy using the command:
+// go install -v github.com/PentestPad/subzy@latest
+
+Running Subzy:
+// You can run Subzy with a single target subdomain:
+// subzy run --target example.com
+
+// Or with a list of subdomains:
+// subzy run --targets list.txt
+
+Reconnaissance Phase:
+// Use Subzy to perform a reconnaissance scan, which will gather information about the target, such as open ports, subdomains, server details, etc.
+// subzy -t target.com --recon
+
+Vulnerability Scanning:
+// Once reconnaissance is complete, you can initiate a vulnerability scan. This will scan the target for known vulnerabilities and misconfigurations.
+// subzy -t target.com --scan
+
+Report Generation:
+// subzy --report -t target.com
+
+Exploit Vulnerabilities (Ethically):
+// If you find a critical vulnerability (with permission), you may use Subzy to test exploitation, such as sending payloads or trying to access sensitive data.
+// subzy --exploit -t target.com
+
+Post-Exploitation:
+// subzy --post-exploit -t target.com
+
+Options:
+// –concurrency: Set the number of concurrent checks (default is 10).
+// –hide_fails: Hide failed checks and invulnerable subdomains.
+// –https: Use HTTPS by default if the protocol is not defined.
+// –timeout: Set the HTTP request timeout in seconds (default is 10).
+// –verify_ssl: Skip sites with invalid SSL certificates if set to true.
+
+
