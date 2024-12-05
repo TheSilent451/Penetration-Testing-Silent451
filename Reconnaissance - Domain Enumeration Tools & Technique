@@ -323,6 +323,8 @@ Install with Go:
 
 Usage
 
+echo "https://example.com" | waybackurls > urls.txt
+
 The basic syntax for using waybackurls is:
 // waybackurls <domain_or_url>
 
