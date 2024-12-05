@@ -185,7 +185,6 @@ Options:
 // –verify_ssl: Skip sites with invalid SSL certificates if set to true.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 4.OneForAll
 OneForAll is a powerful subdomain integration tool
 
@@ -211,4 +210,103 @@ Example command with these options:
 // python3 oneforall.py -d example.com -t 50 -o subdomains.txt -v
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. httpx
+httpx is a fast and flexible HTTP toolkit developed by ProjectDiscovery.It is designed to perform a variety of HTTP-related tasks like testing, probing, and enumeration of websites, APIs, and services. 
+It supports features such as HTTP/1.1, HTTP/2, and HTTP/3, as well as DNS resolution, headers manipulation, proxy support, and more.
+
+Here’s a guide on how to use httpx effectively:
+
+1. Installation
+To get started, you'll need to install httpx. The tool is written in Go, and you can download it from the official repository or install it via Homebrew or Go.
+
+Option 1: Using Go (for Go users)
+// If you have Go installed, you can install httpx using:
+// go install github.com/projectdiscovery/httpx/cmd/httpx@latest
+
+Option 2: Using Homebrew (for macOS and Linux users)
+// You can also install httpx with Homebrew by running:
+// brew install projectdiscovery/tap/httpx
+
+Option 3: Downloading the Binary (For Windows and Linux)
+// You can also download precompiled binaries from the releases page of the official GitHub repository.
+
+2. Basic Usage
+// Once installed, you can use httpx via the command line. The basic syntax is:
+// httpx -u <url>
+
+For example, to send a simple HTTP request to a URL:
+// httpx -u https://example.com
+// This will return the HTTP status and other details like headers and body content.
+
+3. Common Options
+Here are some useful command-line flags:
+// -u url: The URL or list of URLs to scan. Can accept single URLs or a file with a list of URLs.
+// -l file.txt: Read URLs from a file instead of specifying them directly in the command.
+// -threads n: Set the number of threads for concurrent requests. This can speed up scans significantly.
+// -status-code: Display the HTTP status code.
+// -title: Display the page title.
+// -json: Output the results in JSON format.
+// -follow-redirects: Automatically follow HTTP redirects.
+// -proxy http://<proxy_url>: Use a proxy for the HTTP requests.
+// -timeout seconds: Set the timeout for the requests.
+
+4. Advanced Usage
+// Scan a List of URLs: You can provide a file with URLs to scan instead of manually entering each one. For example:
+// httpx -l urls.txt -o output.txt
+// This will scan all the URLs in urls.txt and save the results in output.txt.
+
+Scan for Alive Domains: You can use httpx to quickly check if a domain is up and running by scanning a list of subdomains or domains:
+// httpx -l subdomains.txt -status-code -title
+// This will print the status codes and titles of all the URLs from subdomains.txt.
+
+Testing Specific Headers: You can test specific headers and responses from a target:
+// httpx -u https://example.com -title -status-code -server
+// This command will show the HTTP status code, page title, and the server header.
+
+Using HTTP/2 or HTTP/3: To specify the protocol version (e.g., HTTP/2 or HTTP/3), use the -http2 or -http3 flag.
+// httpx -u https://example.com -http2
+// This will force the usage of HTTP/2 for the requests.
+
+Save Results: To save your scan results into a specific format (like JSON or plain text):
+// httpx -u https://example.com -json output.json
+// This will output the results as JSON.
+
+5. Additional Features
+// HTTP/2 & HTTP/3 Support: httpx supports HTTP/2 and HTTP/3 for faster, modern communication with servers that support these protocols.
+// Retries and Timeouts: You can configure retries and timeouts to ensure robustness and avoid failing connections during scanning.
+// Probing and Banner Grabbing: You can probe services running on a target domain by using httpx's built-in banner-grabbing feature to retrieve metadata about the server.
+
+6. Example Scans
+// Scan a Single URL:
+// httpx -u https://example.com
+// This will show HTTP status code, title, and other basic headers for the URL.
+
+Scan Multiple URLs from a File:
+// httpx -l urls.txt -o result.txt
+// This will scan all URLs in the urls.txt file and save the output to result.txt.
+
+Scan for Specific HTTP Headers:
+// httpx -u https://example.com -status-code -title -server
+// This will show the HTTP status code, the page title, and the server information.
+
+Check Response Headers for All URLs in a File:
+// httpx -l subdomains.txt -headers
+// // This will retrieve the response headers for each subdomain in the list subdomains.txt.
+
+7. Customizing Output
+// You can control the output format with the following options:
+// Plain Output: Just print results to the terminal (default).
+// JSON Output: Useful for automated scripts or analysis:
+// httpx -u https://example.com -json
+// CSV Output: You can output results in CSV format, which is easy to parse with tools like Excel or for further scripting:
+// httpx -u https://example.com -csv
+
+8. Proxies and Authentication
+// You can use proxies or authentication if needed for the scan:
+// Use a Proxy:
+// httpx -u https://example.com -proxy http://127.0.0.1:8080
+
+HTTP Authentication:
+// httpx -u https://example.com -auth user:password
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
