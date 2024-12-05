@@ -3,7 +3,7 @@ Dommain Enumeration Methods & Sites
 // virustotal  - after searching in the relation tab you can find some sub domains
 // https://chaos.projectdiscovery.io/ - Maximum only Well Known companies Sub Domain list are available
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Tools:
 1. subfinder
@@ -143,9 +143,8 @@ Example Workflow
 // You can view all available options and help for assetfinder by running:
 // assetfinder --help
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Subzy is a tool used to identify subdomain takeover vulnerabilities. Here’s a quick guide on how to use it:
-3.subzy
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.Subzy 
 Subzy is a Subdomain Takeover Tool and can be used to identify the domain or domains vulnerable to subdomain takeover vulnerability.
 
 Installation:
@@ -185,4 +184,31 @@ Options:
 // –timeout: Set the HTTP request timeout in seconds (default is 10).
 // –verify_ssl: Skip sites with invalid SSL certificates if set to true.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+4.OneForAll
+OneForAll is a powerful subdomain integration tool
+
+Installation: git clone https://github.com/shmilylty/OneForAll.git
+// cd OneForAll
+// Install the required dependencies:
+// pip install -r requirements.txt
+
+Usage:
+// python3 oneforall.py -d example.com
+// python3 oneforall.py --target example.com run
+// python3 oneforall.py --targets ./example.txt run
+
+3. Additional Options
+// You can use different flags to modify the scan and enhance the results:
+
+// -d domain_name: Specifies the target domain for enumeration.
+// -t thread_count: Set the number of threads for faster execution (default is 10).
+// -o output_file: Specifies a file to save the output (e.g., output.txt).
+// -v: Enable verbose output for more details.
+
+Example command with these options:
+// python3 oneforall.py -d example.com -t 50 -o subdomains.txt -v
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
