@@ -576,3 +576,24 @@ sqlmapapi -c -H 127.0.0.1 -p 8775
 
 for scan :
 in the api command : new -u 'https://example.com'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14.Armitage
+Armitage is a graphical user interface (GUI) for the Metasploit Framework, a powerful penetration testing tool used for discovering, exploiting, and validating vulnerabilities in systems. 
+
+Scanning a Network:
+
+Use Nmap or Armitage’s internal scanner to identify live hosts on a network.
+Example: Scan the subnet 192.168.1.0/24.
+Identifying Vulnerabilities:
+
+Select the discovered hosts and search for available exploits.
+Example: Right-click on the target host and select "Find Attacks."
+Exploiting a Vulnerability:
+
+Once an exploit is found, you can use it to compromise the system.
+Example: Use an MS08-067 exploit to compromise a Windows system.
+Post-Exploitation:
+
+After successful exploitation, gather information, dump hashes, and escalate privileges.
+Example: Use meterpreter to take control and pivot through the network.
