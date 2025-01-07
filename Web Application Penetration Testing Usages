@@ -597,3 +597,88 @@ Post-Exploitation:
 
 After successful exploitation, gather information, dump hashes, and escalate privileges.
 Example: Use meterpreter to take control and pivot through the network.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+15. Commix
+
+Commix (Command Injection Exploiter) is a tool used to automatically detect and exploit command injection vulnerabilities in web applications.
+Command injection vulnerabilities occur when an attacker can inject arbitrary commands into a system shell through a web application, often leading to unauthorized access, system compromise, or data leakage.
+
+commix --wizard [ use it like sqlmap ]
+
+1. Installing Commix
+You can install Commix directly from its GitHub repository. To get started:
+
+Clone the repository:
+git clone https://github.com/commixproject/commix.git
+cd commix
+
+Install required dependencies:
+Commix requires Python and a set of dependencies. You can install them by running:
+pip install -r requirements.txt
+
+2. Basic Usage
+Syntax:
+The basic syntax of the tool is:
+python commix.py --url <target_url> --data "<POST_data>" --cookie "<cookie_data>"
+
+commix -u https://example.com
+
+Where:
+
+--url <target_url>: The URL of the web application you want to test.
+--data <POST_data>: The data to be sent using the POST method (e.g., form parameters).
+--cookie <cookie_data>: (Optional) If authentication is required, pass session cookies.
+
+3. Testing for Command Injection
+
+Example 1: GET-based Command Injection
+If the vulnerability is in a GET parameter, you can test it like this:
+python commix.py --url "http://example.com/page.php?id=1"
+This checks if the id parameter is vulnerable to command injection.
+
+Example 2: POST-based Command Injection
+For POST data (e.g., form submission), use:
+python commix.py --url "http://example.com/login.php" --data "username=admin&password=admin"
+This submits the specified data and tests for command injection in the POST parameters.
+
+Example 3: Using Cookies for Authenticated Sessions
+If the application uses cookies for authentication, provide them like this:
+python commix.py --url "http://example.com/page.php?id=1" --cookie "PHPSESSID=your_session_id"
+
+4. Advanced Options
+
+Specifying Injection Technique
+Commix can use various injection techniques to bypass security mechanisms:
+python commix.py --url "http://example.com/page.php?id=1" --technique=1
+--technique=1 (or -t 1): Uses a specific technique to test for command injection.
+Setting Risk and Level
+
+You can control how thoroughly Commix tests for vulnerabilities:
+--level <level>: Specifies how thoroughly to test the parameters (levels range from 1 to 5).
+--risk <risk>: Defines the risk level for the payloads (1 to 3).
+Example:
+python commix.py --url "http://example.com/page.php?id=1" --level 3 --risk 2
+
+Interactive Mode
+Commix also offers an interactive mode, where you can manually interact with the target and refine your tests based on live responses:
+python commix.py --url "http://example.com/page.php?id=1" --interactive
+
+5. Post-Exploitation
+After successful exploitation, you may be able to:
+Execute system commands: Run arbitrary commands on the target machine.
+Download files: Retrieve sensitive files from the target.
+Upload files: Upload files to the target server (such as backdoors or exploits).
+
+Example of running a simple command (whoami) on the target server after exploitation:
+python commix.py --url "http://example.com/page.php?id=1" --os-cmd "whoami"
+
+6. Help and Documentation
+For more details on the options and syntax, you can always refer to the help command:
+python commix.py --help
+This will display all available options and their descriptions.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
