@@ -677,7 +677,15 @@ python commix.py --url "http://example.com/page.php?id=1" --os-cmd "whoami"
 For more details on the options and syntax, you can always refer to the help command:
 python commix.py --help
 This will display all available options and their descriptions.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+16.wget
+
+Wget is a powerful and flexible command-line utility available in Kali Linux and many other Linux distributions. It is primarily used for downloading files and content from the web, but it can also be used for web crawling and mirroring websites.
+
+Download a Complete Website: You can mirror an entire website by using the -r flag along with -np and -k options.
+wget -r -np -k http://example.com
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
