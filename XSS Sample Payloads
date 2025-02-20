@@ -1,8 +1,16 @@
 
 PortSwigger Cross-site scripting (XSS) cheat sheet : https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
 
-====================================================================================================================================================================================================================================
+==================================================================================================================================================================================================================================================================================================
+1. Try to add the basic payloads the input and see it reflects any where in the response or if the saved on the db try open that page and see if it reflect on that page response. 
+2. If you can use a payload in the url & if the request sent without any issue, find where it is reflecting in the response find and then move with customizing the payload. 
+3. You can customize the payload by editing in the inspect to see which is working or no & the take the payload try again.
+4. If the payload is reflecting in the response there is some percent chance that it will exploitable.
+5. the payload can be reflecting anywhere you need to find where & which page its reflecting to get the result.
 
+<a href="https://example.com/tasks?page=2" </a>onmouseover="alert(1)">2
+
+==================================================================================================================================================================================================================================================================================================
 onmouseover="alert(document.cookie)"
 
 Basic Script Injection:
