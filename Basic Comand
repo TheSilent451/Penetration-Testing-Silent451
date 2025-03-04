@@ -7,3 +7,5 @@
 3.Linux
    // add user - sudo adduser <username>
    // nano /etc/sudoers - add [ root  ALL=(ALL:ALL) ALL ]
+
+4. tnc []
