@@ -8,4 +8,4 @@
    // add user - sudo adduser <username>
    // nano /etc/sudoers - add [ root  ALL=(ALL:ALL) ALL ]
 
-4. tnc []
+4. [Test Network Connection ]  tnc example.com -port 22
