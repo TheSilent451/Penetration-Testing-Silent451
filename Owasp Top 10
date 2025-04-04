@@ -1,0 +1,187 @@
+1. Broken Access Control
+What is it? Access control ensures that users can only perform actions they are authorized for. When this mechanism fails, attackers can view, modify, or delete data without proper permissions.
+
+Example:
+
+An application allows users to change their account privileges via an insecure API, enabling attackers to escalate their access from user to admin.
+
+An attacker manipulates URLs to access restricted pages, exposing sensitive information.
+
+Mitigation:
+
+Implement Role-Based Access Control (RBAC) with the principle of least privilege.
+
+Always enforce access control on the server side—not just the client side.
+
+Conduct regular audits to identify misconfigurations.
+
+Use access tokens securely to manage authentication sessions.
+
+Apply deny-by-default policies, ensuring that users must explicitly be granted permissions.
+
+2. Cryptographic Failures
+What is it? Cryptographic failures occur when data is not properly encrypted or when weak encryption algorithms are used. This can lead to data breaches or exposure of sensitive information.
+
+Example:
+
+A web application stores passwords in plaintext, making them readable if compromised.
+
+Sensitive user data is transmitted without encryption, allowing attackers to intercept it (Man-in-the-Middle attacks).
+
+Mitigation:
+
+Use strong encryption algorithms like AES-256 or RSA-2048.
+
+Enforce TLS (HTTPS) to secure web traffic.
+
+Implement proper key management and never store cryptographic keys in source code.
+
+Apply data masking techniques for sensitive information such as credit card numbers.
+
+Regularly rotate encryption keys to prevent exposure risks.
+
+3. Injection Attacks
+What is it? Injection vulnerabilities occur when untrusted data is improperly processed, allowing attackers to modify system behavior, execute commands, or steal data.
+
+Example:
+
+SQL Injection: Attackers insert malicious SQL queries to extract all user data from a database.
+
+Command Injection: Hackers exploit improperly handled input fields to execute system commands.
+
+Mitigation:
+
+Use parameterized queries and prepared statements to avoid direct SQL execution.
+
+Implement strict input validation (reject unexpected characters).
+
+Utilize Web Application Firewalls (WAF) to detect and block injection attempts.
+
+Restrict database access permissions to limit the impact of an attack.
+
+Conduct regular security testing to find vulnerabilities.
+
+4. Insecure Design
+What is it? Insecure design refers to weak architecture that fails to consider security threats, making applications vulnerable by default.
+
+Example:
+
+A banking application stores session IDs in URLs, making them easily exploitable.
+
+Developers implement custom authentication without following security best practices.
+
+Mitigation:
+
+Implement Secure Development Life Cycle (SDLC) from the beginning.
+
+Conduct Threat Modeling to identify risks early.
+
+Follow security best practices for authentication and session management.
+
+Apply defense-in-depth strategies to prevent single points of failure.
+
+5. Security Misconfiguration
+What is it? Misconfiguration happens when default settings, exposed APIs, or unnecessary features make an application vulnerable.
+
+Example:
+
+A web server exposes error messages that reveal internal infrastructure details.
+
+Unused or outdated software modules introduce known vulnerabilities.
+
+Mitigation:
+
+Remove default accounts, unnecessary services, and features.
+
+Regularly review and apply security updates to all components.
+
+Configure error messages properly, avoiding information disclosure.
+
+Implement automated security testing tools to detect misconfigurations.
+
+6. Vulnerable and Outdated Components
+What is it? Using outdated or vulnerable third-party dependencies increases the risk of exploitation.
+
+Example:
+
+A library used in a web application has a known security flaw, allowing attackers to execute malicious code.
+
+A plugin remains unpatched, exposing users to threats.
+
+Mitigation:
+
+Regularly update software dependencies and remove unused libraries.
+
+Monitor frameworks using tools like Dependency Check or OWASP Dependency-Track.
+
+Subscribe to security advisories for the software you use.
+
+Implement automated patching mechanisms.
+
+7. Identification and Authentication Failures
+What is it? Weak authentication methods allow unauthorized users to gain access.
+
+Example:
+
+A website does not enforce strong password policies, making brute-force attacks effective.
+
+Authentication tokens are stored in browser local storage, increasing theft risks.
+
+Mitigation:
+
+Enforce Multi-Factor Authentication (MFA).
+
+Require strong password policies and implement rate-limiting on failed login attempts.
+
+Secure authentication tokens using secure storage methods.
+
+Use single sign-on (SSO) and federated authentication for centralized security management.
+
+8. Software and Data Integrity Failures
+What is it? Software integrity failures occur when applications fail to verify updates, data sources, or cryptographic integrity.
+
+Example:
+
+Attackers deliver malicious software updates that modify system behavior.
+
+Code injection via insecure CI/CD pipelines.
+
+Mitigation:
+
+Implement code signing and cryptographic verification for all updates.
+
+Use secure CI/CD pipelines that enforce strict integrity checks.
+
+Restrict software installations to trusted sources only.
+
+9. Security Logging and Monitoring Failures
+What is it? Without proper logging and monitoring, attacks go unnoticed.
+
+Example:
+
+Hackers gain access, but because logs don’t capture authentication attempts, the attack remains undetected.
+
+Security breaches aren’t flagged, resulting in prolonged exposure.
+
+Mitigation:
+
+Enable detailed logging, focusing on authentication, access control, and API interactions.
+
+Use SIEM (Security Information and Event Management) systems.
+
+Conduct regular security audits and anomaly detection.
+
+10. Server-Side Request Forgery (SSRF)
+What is it? SSRF allows attackers to send unauthorized requests to internal systems.
+
+Example:
+
+Attackers manipulate an image upload feature to extract sensitive data from internal services.
+
+Mitigation:
+
+Whitelist approved requests, rejecting those from unknown sources.
+
+Apply firewall rules to block unauthorized internal network access.
+
+Sanitize user input, preventing attackers from modifying request parameters.
