@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:dom="http://rmg-zrpe-uat.zafincloud.com/platform/services/domain">
+                  xmlns:dom="http://YOUR.OWN">
    <soapenv:Header/>
    <soapenv:Body>
       <dom:generate>
