@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:dom="http://rmg-zrpe-uat.zafincloud.com/platform/services/domain">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dom:generate>
+         <vsid>12345</vsid>
+         <!-- Add more expected parameters if needed -->
+      </dom:generate>
+   </soapenv:Body>
+</soapenv:Envelope>
