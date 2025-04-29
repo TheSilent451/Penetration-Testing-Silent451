@@ -1,0 +1,6 @@
+1. SSLYZE - sslscaner
+
+$ pip install --upgrade pip setuptools wheel
+$ pip install --upgrade sslyze
+$ python -m sslyze www.yahoo.com
+
