@@ -9,3 +9,5 @@
    // nano /etc/sudoers - add [ root  ALL=(ALL:ALL) ALL ]
 
 4. [Test Network Connection ]  tnc example.com -port 22
+
+5. You can create a new GUID in PowerShell using the following command: [guid]::NewGuid()
