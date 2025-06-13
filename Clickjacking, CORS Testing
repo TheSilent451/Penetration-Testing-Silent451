@@ -109,6 +109,9 @@ function reqListener(){
 
 
 
+4.Cross-site WebSocket hijacking
+
+
 Orgin Check : Websocket orgin (cors)
 
 <!DOCTYPE html>
