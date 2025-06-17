@@ -11,3 +11,5 @@
 4. [Test Network Connection ]  tnc example.com -port 22
 
 5. You can create a new GUID in PowerShell using the following command: [guid]::NewGuid()
+
+6. to check the hash value of file : certutil -hashfile C:\Users\rk\Desktop\js.rar SHA256
