@@ -15,3 +15,6 @@
 6. to check the hash value of file : certutil -hashfile C:\Users\rk\Desktop\js.rar SHA256
 
 6. for ssl cypher suit scan : nmap --script ssl-enum-ciphers -p -443 www.example.com
+
+7. nikto -h example.com -o report.html -Format htm
+
