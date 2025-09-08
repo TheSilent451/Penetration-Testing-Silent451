@@ -18,3 +18,22 @@
 
 7. nikto -h example.com -o report.html -Format htm
 
+
+
+HTML Ijection : 
+
+import org.apache.commons.text.StringEscapeUtils;
+public class HTMLInjectionExample {
+ 
+ public static void main(String[] args) {
+ // Simulating user input
+ String userInput = "<script>alert('Hello!');</script>";
+// Incorrect implementation - Concatenating input without escaping
+ String incorrectOutput = "<p>Welcome, " + userInput + "!</p>";
+ System.out.println("Incorrect Output: " + incorrectOutput);
+// Correct implementation - Escaping user input
+ String sanitizedInput = StringEscapeUtils.escapeHtml4(userInput);
+ String correctOutput = "<p>Welcome, " + sanitizedInput + "!</p>";
+ System.out.println("Correct Output: " + correctOutput);
+ }
+}
