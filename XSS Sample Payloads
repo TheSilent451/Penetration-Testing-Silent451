@@ -10,6 +10,7 @@ PortSwigger Cross-site scripting (XSS) cheat sheet : https://portswigger.net/web
 
 <a href="https://example.com/tasks?page=2" </a>onmouseover="alert(1)">2
 
+<div menuid=”batman” onmouseover=alert(1)> ”> </div>
 ==================================================================================================================================================================================================================================================================================================
 onmouseover="alert(document.cookie)"
 
