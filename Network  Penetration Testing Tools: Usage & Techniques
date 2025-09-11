@@ -1,5 +1,7 @@
 Network Pentest Tools: Usage & Techniques
 
+LOLBAS - website contaion win executable 
+
 DSViper
 DS Viper is a powerful tool designed to bypass Windows Defender's security mechanisms, enabling seamless execution of payloads on Windows systems without triggering security alerts. It utilizes a combination of advanced techniques to manipulate and disguise payloads,
 providing cybersecurity professionals, red teamers, and penetration testers with a robust solution for achieving undetected access.
