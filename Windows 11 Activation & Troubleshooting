@@ -4,3 +4,4 @@
 2. Windows 10-11 Activation 
 // Run this command on the powershell : irm https://get.activated.win | iex
 autorun for windows - Simply run Autoruns and it shows you the currently configured auto-start applications as well as the full list of Registry and file system locations available for auto-start configuration
+3. Debloat : iwr -useb https://christitus.com/win | iex 
