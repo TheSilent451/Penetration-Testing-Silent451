@@ -1,0 +1,49 @@
+URL parameters (name → meaning — example — concerns)
+
+url — general target URL. — ?url=https://example.com/api — SSRF, open-redirect, injection.
+
+redirect — destination after action. — ?redirect=/home — open redirect.
+
+returnUrl / return_to — where to return after flow. — ?returnUrl=https://site.com — open redirect, phishing.
+
+callback / callbackUrl — URL for async callback/webhook. — ?callback=https://hook.site/abc — SSRF, CSRF, data exfiltration.
+
+next — next page to visit. — ?next=/dashboard — open redirect.
+
+continue — continue URL in auth flows. — ?continue=/app — open redirect.
+
+target / targetUrl — action target. — ?target=https://a — SSRF/open redirect.
+
+return_path / path — internal path to load. — ?path=/profile — path traversal, auth bypass.
+
+apiUrl / api_endpoint — backend API endpoint. — ?apiUrl=/v1/items — SSRF, unauthorized access.
+
+dataUrl / feedUrl — JSON or feed location. — ?dataUrl=/feeds/latest.json — SSRF, sensitive data leak.
+
+imageUrl / img — image resource URL. — ?imageUrl=http://attacker/img.png — SSRF, content injection.
+
+elementsUrl — endpoint for page elements/components. — ?elementsUrl=/api/widgets — SSRF, access to internal APIs.
+
+source / src — origin resource. — ?source=https://cdn.example.com/file — SSRF, CSRF if trusted.
+
+referer / ref — referring resource/id. — ?ref=https://other — info disclosure, tracking.
+
+file / fileUrl — file download location. — ?file=/etc/passwd — local file inclusion / path traversal.
+
+webhook — webhook endpoint to call. — ?webhook=https://hooks.example.com — SSRF, arbitrary outbound requests.
+
+domain / host — hostname to contact or validate. — ?domain=internal.local — SSRF, DNS rebinding risk.
+
+service / endpoint — microservice endpoint identifier or URL. — ?service=http://10.0.0.5/api — SSRF, internal API access.
+
+Quick testing checklist (for security-minded users)
+
+Does the server fetch the URL? → test SSRF (allowlist, DNS out-of-band).
+
+Is value used in redirects? → test open-redirect (relative vs absolute handling).
+
+Is it reflected back to page/JS? → test XSS/reflected injection.
+
+Is it used to load files? → test LFI/RFI/path traversal.
+
+Are there authorization checks when fetching internal endpoints? → test access to internal APIs.
