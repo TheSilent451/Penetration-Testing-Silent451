@@ -1,3 +1,6 @@
+
+wafw00f https://example.com
+
 1. Ram mem speed check : wmic memorychip get speed
 
 2. Installation without admin privilege
