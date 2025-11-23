@@ -1,4 +1,4 @@
-
+if u want wsl to detect usb : install this on ps : winget install usbipd
 wafw00f https://example.com
 
 1. Ram mem speed check : wmic memorychip get speed
