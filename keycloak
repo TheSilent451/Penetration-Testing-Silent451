@@ -46,3 +46,81 @@ jwt_token = jwt.encode(
 )
 
 print("JWT:", jwt_token)
+
+
+
+
+
+
+
+
+#!/usr/bin/env python3
+"""
+Generate signed JWT using Keycloak-style RSA keys.
+"""
+
+import time, requests, sys, json
+
+def get_keys(realm_url='https://auth-server.com/auth', realm_name='master'):
+    """Get JWKS from server."""
+    url = f"{realm_url}/realms/{realm_name}/.well-known/jwks.json"
+    
+    try:
+        response = requests.get(url)
+        return response.json()['keys']
+    except Exception as e:
+        sys.exit(f"Error fetching keys: {e}")
+
+def generate_token(payload, realm_url='https://auth-server.com/auth', 
+                   realm_name='master'):
+    """Generate signed JWT token."""
+    
+    # Find first valid key
+    jwks = get_keys(realm_url, realm_name)
+    
+    if not jwks:
+        sys.exit("No keys found!")
+        
+    kid = jwks[0]['kid']
+    
+    # Generate payload with expiry time (in seconds since epoch)
+    payload['iat'] = int(time.time())
+    payload['exp'] = payload.get('exp', payload['iat'] + 3600)  # Default: 1 hour
+    
+    # Try to import jwt library
+    try:
+        from jose import jwt, jwk
+        
+        key_data = next(k for k in jwks if k['kid'] == kid)
+        
+        return jwt.encode(
+            payload,
+            key_data['n'], 
+            algorithm='RS256',
+            headers={
+                'kid': kid,
+                'alg': 'RS256'
+            }
+        )
+    
+    except ImportError:
+        print("Install the python-jose package to generate JWTs")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        sys.exit(f"Usage: {sys.argv[0]} 'user_id' [realm_url] [realm_name]")
+    
+    user = sys.argv[1]
+    realm_url = sys.argv[2] if len(sys.argv) > 2 else None
+    realm_name = sys.argv[3] if len(sys.argv) > 3 else "master"
+    
+    payload = {
+        'sub': user,
+        # Additional claims here (like name, email, etc.)
+    }
+    
+    token = generate_token(payload, realm_url or '', realm_name)
+    
+    print(f"Generated Token: {token}")
+
