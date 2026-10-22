@@ -1,0 +1,48 @@
+Download the Public Key:
+You need to obtain the Public Key from your Keycloak server which is usually available at https://<your-keycloak-server>/realms/<realm-name>/.well-known/jwks.json. This JSON file contains all the keys including the public key.
+
+How to Use This Script
+Replace <your-keycloak-server> with your actual Keycloak server URL.
+Replace <realm-name> with your realm name
+Set the public_key_id variable to match the key ID you need.
+
+
+
+
+
+Generate JWT Using Python:
+
+import requests
+import jwt
+
+# Fetch the JWKS (JSON Web Key Set)
+response = requests.get("https://<your-keycloak-server>/realms/<realm-name>/.well-known/jwks.json")
+jwks_data = response.json()
+
+# Find your specific key by its kid (Key ID)
+public_key_id = "<your-key-id>"
+keys = [k for k in jwks_data['keys'] if k['kid'] == public_key_id]
+if not keys:
+    print("No matching key found")
+    exit(1)
+
+key_data = keys[0]
+
+# Generate JWT
+token_payload = {
+    'sub': '<user-identifier>',
+    'iat': int(time.time()),
+    'exp': int(time.time()) + 3600, # expires in one hour
+}
+
+jwt_token = jwt.encode(
+    token_payload,
+    public_key_id, 
+    algorithm='RS256',
+    headers={
+        'kid': key_data['kid'],
+        'alg': 'RS256'
+    }
+)
+
+print("JWT:", jwt_token)
