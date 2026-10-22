@@ -124,3 +124,71 @@ if __name__ == "__main__":
     
     print(f"Generated Token: {token}")
 
+
+
+
+
+
+#!/usr/bin/env python3
+"""
+Generate signed JWT token using custom key material.
+"""
+
+import time, jwt
+
+def get_keys():
+    """Return keys from provided JWKS."""
+    
+    return {
+        "Ws3oFEuYPh4XH2f_1c9RvO0jpPpK3E6_RA8mVuq2u5U": """
+-----BEGIN CERTIFICATE-----
+MIICmzCCAYMCBgGhSUpTXjANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDDAZt
+...
+-----END CERTIFICATE-----
+""",
+        "jwCxKocf6VXWbvlZfFmaJyeVmpUsMblYD7Z0FNd34Qo": """
+-----BEGIN CERTIFICATE-----
+MIICmzCCAYMCBgGhSUpUADANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDDAZt
+...
+-----END CERTIFICATE-----
+"""
+    }
+
+def generate_token(payload):
+    """Generate signed JWT token."""
+    
+    payload['iat'] = int(time.time())
+    payload['exp'] = payload.get('exp', payload['iat'] + 3600)
+    
+    kid, public_key_pem = next(iter(get_keys().items()))
+    
+    try:
+        import jose
+        
+        return jwt.encode(
+            payload,
+            public_key_pem.strip(),
+            headers={'kid': kid}
+        )
+        
+    except Exception as e:
+        print(f"Error generating token: {e}")
+        return None
+
+if __name__ == "__main__":
+    username = "your_username"
+    
+    payload = {
+        'sub': username,
+        'email': f"{username}@example.com",
+    }
+    
+    token = generate_token(payload)
+    if token:
+        print(f"Generated JWT: {token}")
+
+
+
+
+
+
